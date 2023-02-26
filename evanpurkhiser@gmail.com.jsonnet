@@ -202,6 +202,17 @@ local privacyPolicyUpdates = {
   },
 };
 
+// These emails are literally just "please login"
+local iptorrentsNotice = {
+  filter: {
+    from: 'noreply@iptorrents.com',
+  },
+  actions: {
+    archive: true,
+    markRead: true,
+  },
+};
+
 local rules = [
   recruiters,
   lyftRides,
@@ -214,6 +225,7 @@ local rules = [
   sentryOptionGrants,
   bandcamp,
   privacyPolicyUpdates,
+  iptorrentsNotice,
 ];
 
 {
