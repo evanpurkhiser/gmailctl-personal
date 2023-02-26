@@ -40,7 +40,7 @@ jobs:
         run: gmailctl init --refresh-expired
 
       - name: Produce filter diff
-        run: gmailctl apply --yes -f evanpurkhiser@gmail.com.jsonnet
+        run: gmailctl apply --yes --remove-labels -f evanpurkhiser@gmail.com.jsonnet
 
       - name: Close applied issue
         uses: lee-dohm/close-matching-issues@v2
