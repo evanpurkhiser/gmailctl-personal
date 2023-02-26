@@ -11,6 +11,8 @@ local labels = [{ name: l } for l in [
   'Uber Rides',
   'Venmo Cashout',
   'Venmo Paid',
+  'Brand: Theory',
+  'Brand: Club Monaco',
 ]];
 
 // Attempt to filter out recruiter emails
@@ -213,6 +215,24 @@ local iptorrentsNotice = {
   },
 };
 
+local brandTheory = {
+  filter: {
+    from: 'theory@e.theory.com',
+  },
+  actions: {
+    labels: ['Brand: Theory']
+  },
+};
+
+local brandClubmonaco = {
+  filter: {
+    from: 'CustomerAssistance@emails.clubmonaco.com',
+  },
+  actions: {
+    labels: ['Brand: Club Monaco']
+  },
+};
+
 local rules = [
   recruiters,
   lyftRides,
@@ -226,6 +246,8 @@ local rules = [
   bandcamp,
   privacyPolicyUpdates,
   iptorrentsNotice,
+  brandTheory,
+  brandClubmonaco,
 ];
 
 {
