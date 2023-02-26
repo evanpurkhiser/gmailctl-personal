@@ -1,0 +1,70 @@
+name: diff
+on:
+  push:
+    branches: [main]
+
+jobs:
+  diff:
+    name: diff
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      # Close any existing un-applied issues. We want do this immediately since
+      # labeling with `approve` will always apply the most recent filter config
+      - name: Close old pending filter change issues
+        uses: lee-dohm/close-matching-issues@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          query: "label:Pending"
+
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+        with:
+          go-version: ">=1.20.0"
+
+      - name: Install gmailctl
+        run: go install github.com/mbrt/gmailctl/cmd/gmailctl@latest
+
+      - name: Install credentials
+        run: |
+          mkdir "$HOME/.gmailctl"
+          echo "$TOKEN" > "$HOME/.gmailctl/token.json"
+          echo "$CREDENTIALS" > "$HOME/.gmailctl/credentials.json"
+        env:
+          TOKEN: ${{ secrets.GMAIL_TOKEN }}
+          CREDENTIALS: ${{ secrets.GMAIL_CREDENTIALS }}
+
+      - name: Update token
+        run: gmailctl init --refresh-expired
+
+      - name: Produce filter diff
+        run: |
+          gmailctl diff -f evanpurkhiser@gmail.com.jsonnet 2>&1 | tee filters.diff
+
+      - name: Read diff output into variable
+        uses: actions/github-script@v6
+        id: diff
+        with:
+          script: |
+            const fs = require('fs');
+            return fs.readFileSync('filters.diff','utf8').toString();
+          result-encoding: string
+
+      # Create a new issue
+      - name: Create an issue
+        if: "${{ steps.diff.outputs.result != '' }}"
+        uses: actions-ecosystem/action-create-issue@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          title: Filters have changed
+          labels: Pending
+          body: |
+            The following changes will be applied to the gmail filters
+
+            Add the `Approve` label to this issue to apply the changes
+
+            ```diff
+            ${{ steps.diff.outputs.result }}
+            ```
