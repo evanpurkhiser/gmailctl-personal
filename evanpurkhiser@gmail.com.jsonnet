@@ -8,6 +8,7 @@ local labels = [{ name: l } for l in [
   'Uber Rides',
   'Venmo Cashout',
   'Venmo Paid',
+  'Rent Payments',
   'Brand: Theory',
   'Brand: Club Monaco',
 ]];
@@ -127,6 +128,16 @@ local venmoCashout = {
   },
 };
 
+local rentPayments = {
+  filter: {
+    subject: "Pine/Polk, LLC - Online Payment Confirmation"
+  },
+  actions: {
+    archive: true,
+    labels: ['Rent Payments'],
+  },
+};
+
 // Archive wealthfront notifications
 local wealthfrontNotifications = {
   filter: {
@@ -240,6 +251,7 @@ local rules = [
   doordash,
   venmoPaid,
   venmoCashout,
+  rentPayments,
   wealthfrontNotifications,
   chaseStatements,
   sentryOptionGrants,
