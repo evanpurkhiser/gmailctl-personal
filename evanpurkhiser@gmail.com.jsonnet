@@ -172,6 +172,17 @@ local chaseStatements = {
   },
 };
 
+// Ignore Charles Schwab "Vote now!" emails
+local schwabProxy = {
+  filter: {
+    from: 'id@proxyvote.com',
+  },
+  actions: {
+    archive: true,
+    markRead: true,
+  },
+};
+
 // New sentry option grants, useful to keep for historic reasons
 local sentryOptionGrants = {
   filter: {
@@ -254,6 +265,7 @@ local rules = [
   rentPayments,
   wealthfrontNotifications,
   chaseStatements,
+  schwabProxy,
   sentryOptionGrants,
   bandcamp,
   privacyPolicyUpdates,
