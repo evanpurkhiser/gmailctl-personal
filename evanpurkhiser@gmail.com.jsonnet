@@ -216,10 +216,7 @@ local bandcamp = {
 // have absolutely never once read these and never will. Just archive
 local privacyPolicyUpdates = {
   filter: {
-    or: [
-      { subject: 'privacy policy' },
-      { subject: 'terms and policies' },
-    ]
+    subject: 'privacy',
   },
   actions: {
     archive: true,
