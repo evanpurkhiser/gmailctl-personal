@@ -11,6 +11,7 @@ local labels = [{ name: l } for l in [
   'Rent Payments',
   'Brand: Theory',
   'Brand: Club Monaco',
+  'Shipping Notification',
 ]];
 
 // Attempt to filter out recruiter emails
@@ -261,6 +262,16 @@ local brandClubmonaco = {
   },
 };
 
+local shippedNotification = {
+  filter: {
+    has: 'has shipped',
+  },
+  actions: {
+    labels: ['Shipping Notification'],
+    category: "personal",
+  },
+};
+
 local rules = [
   recruiters,
   lyftRides,
@@ -278,6 +289,7 @@ local rules = [
   iptorrentsNotice,
   brandTheory,
   brandClubmonaco,
+  shippedNotification,
 ];
 
 {
