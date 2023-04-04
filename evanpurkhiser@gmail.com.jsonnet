@@ -17,16 +17,25 @@ local labels = [{ name: l } for l in [
 local recruiters = {
   filter: {
     or: [
-      { has: 'recruiter' },
-      { has: 'sourcer' },
-      { has: 'job description' },
-      { has: 'talent manager' },
       // On Linkedin Sentry is stylized as `Sentry (sentry.io)`, this makes
       // it very easy to filter out recruiters using templates
       { has: 'Sentry (sentry.io)' },
-      // Often they say something like "I'm the VP of engineering"
+      // Things recruiters call themselves
+      { has: 'recruiter' },
+      { has: 'sourcer' },
+      { has: 'technical sourcer' },
+      { has: 'talent manager' },
+      { has: 'talent associate' },
+      { has: 'talent scout' },
+      { has: 'talent acquisition' },
+      // Things not recruiters call themselves but still try to recruit
       { has: 'VP of Engineering' },
       { has: 'I’m the CTO' },
+      { has: 'Co-Founder' },
+      // Phrases they like to use
+      { has: 'your experience at sentry' },
+      { has: 'the hiring manager' },
+      { has: 'job description' },
     ],
   },
   actions: {
