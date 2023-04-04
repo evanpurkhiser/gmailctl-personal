@@ -32,7 +32,7 @@ local recruiters = {
       // Things not recruiters call themselves but still try to recruit
       { has: 'VP of Engineering' },
       { has: 'I’m the CTO' },
-      { has: 'Co-Founder' },
+      { has: 'I’m the Co-Founder' },
       // Phrases they like to use
       { has: 'your experience at sentry' },
       { has: 'the hiring manager' },
