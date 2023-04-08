@@ -37,6 +37,9 @@ local recruiters = {
       { has: 'your experience at sentry' },
       { has: 'the hiring manager' },
       { has: 'job description' },
+      { has: 'Series A startup' },
+      { has: 'Series B startup' },
+      { has: 'Series C startup' },
     ],
   },
   actions: {
