@@ -44,6 +44,7 @@ local recruiters = {
   },
   actions: {
     archive: true,
+    markRead: true,
     labels: ['Recruiters'],
   },
 };
