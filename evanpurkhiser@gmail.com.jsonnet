@@ -2,15 +2,15 @@ local lib = import 'gmailctl.libsonnet';
 
 local labels = [{ name: l } for l in [
   'Bandcamp',
-  'Lyft Rides',
+  'Brand / Theory',
   'Recruiters',
-  'Sentry Options',
-  'Uber Rides',
-  'Venmo Cashout',
-  'Venmo Paid',
   'Rent Payments',
-  'Brand: Theory',
+  'Rideshare / Lyft',
+  'Rideshare / Uber',
+  'Sentry Options',
   'Shipping Notification',
+  'Venmo / Cashout',
+  'Venmo / Paid',
 ]];
 
 // Attempt to filter out recruiter emails
@@ -59,7 +59,7 @@ local lyftRides = {
   actions: {
     archive: true,
     markRead: true,
-    labels: ['Lyft Rides'],
+    labels: ['Rideshare / Lyft'],
   },
 };
 
@@ -79,7 +79,7 @@ local uberRides = {
   actions: {
     archive: true,
     markRead: true,
-    labels: ['Uber Rides'],
+    labels: ['Rideshare / Uber'],
   },
 };
 
@@ -120,7 +120,7 @@ local venmoPaid = {
   actions: {
     archive: true,
     markRead: true,
-    labels: ['Venmo Paid'],
+    labels: ['Venmo / Paid'],
   },
 };
 
@@ -137,7 +137,7 @@ local venmoCashout = {
   actions: {
     archive: true,
     markRead: true,
-    labels: ['Venmo Cashout'],
+    labels: ['Venmo / Cashout'],
   },
 };
 
@@ -252,7 +252,7 @@ local brandTheory = {
     from: 'theory@e.theory.com',
   },
   actions: {
-    labels: ['Brand: Theory']
+    labels: ['Brand / Theory']
   },
 };
 
