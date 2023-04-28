@@ -256,15 +256,6 @@ local brandTheory = {
   },
 };
 
-local brandClubmonaco = {
-  filter: {
-    from: 'CustomerAssistance@emails.clubmonaco.com',
-  },
-  actions: {
-    labels: ['Brand: Club Monaco']
-  },
-};
-
 local shippedNotification = {
   filter: {
     has: 'has shipped',
@@ -291,7 +282,6 @@ local rules = [
   privacyPolicyUpdates,
   iptorrentsNotice,
   brandTheory,
-  brandClubmonaco,
   shippedNotification,
 ];
 
