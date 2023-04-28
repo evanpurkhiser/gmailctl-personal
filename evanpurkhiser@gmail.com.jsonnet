@@ -1,8 +1,9 @@
 local lib = import 'gmailctl.libsonnet';
 
 local labels = [{ name: l } for l in [
-  'Bandcamp',
   'Brand / Theory',
+  'Music / Bandcamp',
+  'Music / Promos',
   'Newsletter / Reading',
   'Newsletter / SF',
   'Newsletter / Shopping',
@@ -214,7 +215,7 @@ local sentryOptionGrants = {
 
 // Sometimse I like to go back through and see what new bandcamp stuff has come
 // out, but generally I don't want this in my inbox
-local bandcamp = {
+local musicBandcamp = {
   filter: {
     and: [
       { from: 'noreply@bandcamp.com' },
@@ -224,7 +225,19 @@ local bandcamp = {
   actions: {
     archive: true,
     markRead: true,
-    labels: ['Bandcamp'],
+    labels: ['Music / Bandcamp'],
+  },
+};
+
+// Emails for tracks sent as promos. These can be a bit higher priority than
+// things like bandcamp.
+local musicPromos = {
+  filter: {
+    from: 'promobox-reply@label-worx.com',
+  },
+  actions: {
+    archive: true,
+    labels: ['Music / Promos'],
   },
 };
 
@@ -319,7 +332,8 @@ local rules = [
   chaseStatements,
   schwabProxy,
   sentryOptionGrants,
-  bandcamp,
+  musicBandcamp,
+  musicPromos,
   privacyPolicyUpdates,
   iptorrentsNotice,
   brandTheory,
