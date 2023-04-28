@@ -268,6 +268,7 @@ local brandTheory = {
     from: 'theory@e.theory.com',
   },
   actions: {
+    archive: true,
     labels: ['Brand / Theory']
   },
 };
@@ -277,6 +278,7 @@ local shippedNotification = {
     has: 'has shipped',
   },
   actions: {
+    archive: true,
     labels: ['Shipping Notification'],
     category: "personal",
   },
@@ -289,6 +291,7 @@ local newsletterReading = {
     ],
   },
   actions: {
+    archive: true,
     labels: ['Newsletter / Reading'],
   },
 };
@@ -300,6 +303,7 @@ local newsletterShopping = {
     ],
   },
   actions: {
+    archive: true,
     labels: ['Newsletter / Shopping'],
   },
 };
@@ -313,6 +317,7 @@ local newsletterSF = {
     ],
   },
   actions: {
+    archive: true,
     labels: ['Newsletter / SF'],
   },
 };
