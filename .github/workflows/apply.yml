@@ -11,14 +11,6 @@ jobs:
       issues: write
 
     steps:
-      # Close any existing un-applied issues. We want do this immediately since
-      # labeling with `approve` will always apply the most recent filter config
-      - name: Close old pending filter change issues
-        uses: lee-dohm/close-matching-issues@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          query: "label:Pending"
-
       - uses: actions/checkout@v3
       - uses: actions/setup-go@v3
         with:
