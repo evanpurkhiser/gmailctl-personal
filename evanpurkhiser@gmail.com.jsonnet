@@ -290,7 +290,6 @@ local newsletterReading = {
   },
   actions: {
     labels: ['Newsletter / Reading'],
-    category: "personal",
   },
 };
 
@@ -302,7 +301,6 @@ local newsletterShopping = {
   },
   actions: {
     labels: ['Newsletter / Shopping'],
-    category: "personal",
   },
 };
 
@@ -316,7 +314,6 @@ local newsletterSF = {
   },
   actions: {
     labels: ['Newsletter / SF'],
-    category: "personal",
   },
 };
 
