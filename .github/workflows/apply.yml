@@ -8,7 +8,7 @@ jobs:
     name: diff
     runs-on: ubuntu-latest
     permissions:
-      issues: write
+      contents: write
 
     steps:
       - uses: actions/checkout@v3
@@ -44,15 +44,15 @@ jobs:
             return fs.readFileSync('filters.diff','utf8').toString();
           result-encoding: string
 
-      - name: Apply changes
-        run: gmailctl apply --yes --remove-labels -f evanpurkhiser@gmail.com.jsonnet
-
       - name: Create commit comment
         uses: peter-evans/commit-comment@v2
         with:
           token: ${{ secrets.github_token }}
           body: |
-            The following changes have been applied
+            The following changes are applied by this commit
 
             ```diff
             ${{ steps.diff.outputs.result }}
+
+      - name: Apply changes
+        run: gmailctl apply --yes --remove-labels -f evanpurkhiser@gmail.com.jsonnet
