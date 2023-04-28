@@ -52,19 +52,15 @@ jobs:
             return fs.readFileSync('filters.diff','utf8').toString();
           result-encoding: string
 
-      # Create a new issue
-      - name: Create an issue
-        if: "${{ steps.diff.outputs.result != '' }}"
-        uses: actions-ecosystem/action-create-issue@v1
-        with:
-          github_token: ${{ secrets.github_token }}
-          title: Filters have changed
-          labels: Pending
-          body: |
-            The following changes will be applied to the gmail filters
+      - name: Apply changes
+        run: gmailctl apply --yes --remove-labels -f evanpurkhiser@gmail.com.jsonnet
 
-            Add the `Approve` label to this issue to apply the changes
+      - name: Create commit comment
+        uses: peter-evans/commit-comment@v2
+        with:
+          token: ${{ secrets.github_token }}
+          body: |
+            The following changes have been applied
 
             ```diff
             ${{ steps.diff.outputs.result }}
-            ```
