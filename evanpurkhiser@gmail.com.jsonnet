@@ -3,6 +3,9 @@ local lib = import 'gmailctl.libsonnet';
 local labels = [{ name: l } for l in [
   'Bandcamp',
   'Brand / Theory',
+  'Newsletter / Reading',
+  'Newsletter / SF',
+  'Newsletter / Shopping',
   'Recruiters',
   'Rent Payments',
   'Rideshare / Lyft',
@@ -266,6 +269,44 @@ local shippedNotification = {
   },
 };
 
+local newsletterReading = {
+  filter: {
+    or: [
+      { from: 'setstudio@buttondown.email' },
+    ],
+  },
+  actions: {
+    labels: ['Newsletter / Reading'],
+    category: "personal",
+  },
+};
+
+local newsletterShopping = {
+  filter: {
+    or: [
+      { from: 'info@designbythem.com' },
+    ],
+  },
+  actions: {
+    labels: ['Newsletter / Shopping'],
+    category: "personal",
+  },
+};
+
+local newsletterSF = {
+  filter: {
+    or: [
+      { from: 'news@sfmoma.org' },
+      { from: 'enews@sfballet.org' },
+      { from: 'newsletter@contact.exploratorium.edu' },
+    ],
+  },
+  actions: {
+    labels: ['Newsletter / SF'],
+    category: "personal",
+  },
+};
+
 local rules = [
   recruiters,
   lyftRides,
@@ -283,6 +324,9 @@ local rules = [
   iptorrentsNotice,
   brandTheory,
   shippedNotification,
+  newsletterReading,
+  newsletterShopping,
+  newsletterSF,
 ];
 
 {
