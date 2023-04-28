@@ -1,11 +1,11 @@
-name: diff
+name: apply
 on:
   push:
     branches: [main]
 
 jobs:
-  diff:
-    name: diff
+  apply:
+    name: apply
     runs-on: ubuntu-latest
     permissions:
       contents: write
