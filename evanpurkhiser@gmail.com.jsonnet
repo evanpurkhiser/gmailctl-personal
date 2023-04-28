@@ -10,7 +10,6 @@ local labels = [{ name: l } for l in [
   'Venmo Paid',
   'Rent Payments',
   'Brand: Theory',
-  'Brand: Club Monaco',
   'Shipping Notification',
 ]];
 
