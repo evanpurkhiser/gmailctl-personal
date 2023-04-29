@@ -313,6 +313,7 @@ local newsletterSF = {
     or: [
       { from: 'news@sfmoma.org' },
       { from: 'enews@sfballet.org' },
+      { from: 'tickets@sfballet.org' },
       { from: 'newsletter@contact.exploratorium.edu' },
     ],
   },
