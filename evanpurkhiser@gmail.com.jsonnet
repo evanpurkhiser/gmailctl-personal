@@ -276,7 +276,11 @@ local brandTheory = {
 
 local shippedNotification = {
   filter: {
-    has: 'has shipped',
+    or: [
+      { has: 'has shipped' },
+      { subject: 'Delivered: Your Amazon.com order' },
+      { subject: 'Your Amazon.com order' },
+    ],
   },
   actions: {
     archive: true,
