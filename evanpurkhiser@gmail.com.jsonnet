@@ -2,6 +2,7 @@ local lib = import 'gmailctl.libsonnet';
 
 local labels = [{ name: l } for l in [
   'Brand / Theory',
+  'Money / Statements',
   'Music / Bandcamp',
   'Music / Promos',
   'Newsletter / Reading',
@@ -324,6 +325,26 @@ local newsletterSF = {
   },
 };
 
+// Various bank / investment statments, I don't need to see this but like to
+// keep them for record
+local statments = {
+  filter: {
+    or: [
+      { subject: "Your Monthly Wealthfront" },
+      { subject: "Your account statement is available" },
+      { subject: "Schwab eConfirms for account ending" },
+      { subject: "View your monthly statement from Google Pay" },
+      { subject: "Your statement is ready for credit card ending" },
+      { subject: "Google Workspace: Your invoice is available for evanpurkhiser.com" },
+      { subject: "DigitalOcean - Payment Receipt" },
+    ],
+  },
+  actions: {
+    archive: true,
+    labels: ['Money / Statements'],
+  }
+};
+
 local rules = [
   recruiters,
   lyftRides,
@@ -345,6 +366,7 @@ local rules = [
   newsletterReading,
   newsletterShopping,
   newsletterSF,
+  statments,
 ];
 
 {
