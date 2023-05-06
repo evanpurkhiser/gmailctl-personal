@@ -156,26 +156,6 @@ local rentPayments = {
   },
 };
 
-// Archive wealthfront notifications
-local wealthfrontNotifications = {
-  filter: {
-    and: [
-      { from: 'support@wealthfront.com' },
-      {
-        or: [
-          { subject: 'Investment prospectus' },
-          { subject: 'Your Wealthfront Account: Funds Have Been Added' },
-          { subject: 'Your Monthly Wealthfront Brokerage Statement' },
-        ],
-      },
-    ],
-  },
-  actions: {
-    archive: true,
-    markRead: true,
-  },
-};
-
 // Chase account statement, These notifications cannot be turned off afacit
 local chaseStatements = {
   filter: {
@@ -335,7 +315,9 @@ local newsletterSF = {
 local statments = {
   filter: {
     or: [
-      { subject: "Your Monthly Wealthfront" },
+      { subject: 'Investment prospectus' },
+      { subject: 'Your Wealthfront Account: Funds Have Been Added' },
+      { subject: 'Your Monthly Wealthfront Brokerage Statement' },
       { subject: "Your account statement is available" },
       { subject: "Schwab eConfirms for account ending" },
       { subject: "View your monthly statement from Google Pay" },
@@ -358,7 +340,6 @@ local rules = [
   venmoPaid,
   venmoCashout,
   rentPayments,
-  wealthfrontNotifications,
   chaseStatements,
   schwabProxy,
   sentryOptionGrants,
