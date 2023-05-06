@@ -305,6 +305,7 @@ local newsletterShopping = {
   filter: {
     or: [
       { from: 'info@designbythem.com' },
+      { from: 'hello@hem.com' },
     ],
   },
   actions: {
