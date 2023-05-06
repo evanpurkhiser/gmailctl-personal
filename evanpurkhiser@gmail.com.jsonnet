@@ -314,6 +314,7 @@ local newsletterSF = {
       { from: 'news@sfmoma.org' },
       { from: 'enews@sfballet.org' },
       { from: 'tickets@sfballet.org' },
+      { from: 'newsletter@exploratorium.edu' },
       { from: 'newsletter@contact.exploratorium.edu' },
     ],
   },
