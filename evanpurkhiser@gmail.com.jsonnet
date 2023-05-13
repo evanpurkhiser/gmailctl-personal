@@ -297,8 +297,8 @@ local newsletterSF = {
   },
 };
 
-// Various bank / investment statments, I don't need to see this but like to
-// keep them for record
+// Various bank / investment statments / reciepts, I don't need to see this but
+// like to keep them for record
 local statments = {
   filter: {
     or: [
@@ -311,6 +311,7 @@ local statments = {
       { subject: "Your statement is ready for credit card ending" },
       { subject: "Google Workspace: Your invoice is available for evanpurkhiser.com" },
       { subject: "DigitalOcean - Payment Receipt" },
+      { has: "Thanks for using DigitalOcean" },
     ],
   },
   actions: {
