@@ -2,6 +2,7 @@ local lib = import 'gmailctl.libsonnet';
 
 local labels = [{ name: l } for l in [
   'Brand / Theory',
+  'Brand / Club Monaco',
   'Money / Statements',
   'Music / Bandcamp',
   'Music / Promos',
@@ -241,6 +242,16 @@ local brandTheory = {
   },
 };
 
+local brandClubMonaco = {
+  filter: {
+    from: 'emails.clubmonaco.com',
+  },
+  actions: {
+    archive: true,
+    labels: ['Brand / Club Monaco']
+  },
+};
+
 local shippedNotification = {
   filter: {
     or: [
@@ -335,6 +346,7 @@ local rules = [
   privacyPolicyUpdates,
   iptorrentsNotice,
   brandTheory,
+  brandClubMonaco,
   shippedNotification,
   newsletterReading,
   newsletterShopping,
