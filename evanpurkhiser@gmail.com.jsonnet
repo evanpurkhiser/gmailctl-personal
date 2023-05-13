@@ -157,20 +157,6 @@ local rentPayments = {
   },
 };
 
-// Chase account statement, These notifications cannot be turned off afacit
-local chaseStatements = {
-  filter: {
-    and: [
-      { from: 'no-reply@alertsp.chase.com' },
-      { subject: 'Your statement is ready' },
-    ],
-  },
-  actions: {
-    archive: true,
-    markRead: true,
-  },
-};
-
 // Ignore Charles Schwab "Vote now!" emails
 local schwabProxy = {
   filter: {
@@ -341,7 +327,6 @@ local rules = [
   venmoPaid,
   venmoCashout,
   rentPayments,
-  chaseStatements,
   schwabProxy,
   sentryOptionGrants,
   musicBandcamp,
