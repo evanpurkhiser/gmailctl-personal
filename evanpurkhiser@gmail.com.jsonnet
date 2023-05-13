@@ -295,11 +295,9 @@ local newsletterShopping = {
 local newsletterSF = {
   filter: {
     or: [
-      { from: 'news@sfmoma.org' },
-      { from: 'enews@sfballet.org' },
-      { from: 'tickets@sfballet.org' },
-      { from: 'newsletter@exploratorium.edu' },
-      { from: 'newsletter@contact.exploratorium.edu' },
+      { from: 'sfmoma.org' },
+      { from: 'sfballet.org' },
+      { from: 'exploratorium.edu' },
     ],
   },
   actions: {
