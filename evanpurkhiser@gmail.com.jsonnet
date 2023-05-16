@@ -311,14 +311,21 @@ local newsletterSF = {
 local statments = {
   filter: {
     or: [
+      // Wealthfront
       { subject: 'Investment prospectus' },
       { subject: 'Your Wealthfront Account: Funds Have Been Added' },
       { subject: 'Your Monthly Wealthfront Brokerage Statement' },
+
+      // Schwab
       { subject: "Your account statement is available" },
       { subject: "Schwab eConfirms for account ending" },
-      { subject: "View your monthly statement from Google Pay" },
+      // Chase
+      { subject: "Your statement is ready for account" },
       { subject: "Your statement is ready for credit card ending" },
+      // Google
       { subject: "Google Workspace: Your invoice is available for evanpurkhiser.com" },
+      { subject: "View your monthly statement from Google Pay" },
+      // Digital Ocean
       { subject: "DigitalOcean - Payment Receipt" },
       { has: "Thanks for using DigitalOcean" },
     ],
