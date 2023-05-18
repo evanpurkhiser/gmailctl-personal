@@ -322,6 +322,7 @@ local statments = {
       // Chase
       { subject: "Your statement is ready for account" },
       { subject: "Your statement is ready for credit card ending" },
+      { subject: "Your Chase Sapphire Reserve automatic payment is scheduled" },
       // Google
       { subject: "Google Workspace: Your invoice is available for evanpurkhiser.com" },
       { subject: "View your monthly statement from Google Pay" },
