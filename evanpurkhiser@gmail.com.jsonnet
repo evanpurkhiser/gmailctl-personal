@@ -1,10 +1,11 @@
 local lib = import 'gmailctl.libsonnet';
 
 local labels = [{ name: l } for l in [
-  'Brand / Theory',
   'Brand / Club Monaco',
-  'Money / Statements',
+  'Brand / Theory',
+  'Mailbox',
   'Money / Receipts',
+  'Money / Statements',
   'Music / Bandcamp',
   'Music / Promos',
   'Newsletter / Reading',
@@ -353,6 +354,17 @@ local receipts = {
   }
 };
 
+// USPS Informed delivery
+local mailbox = {
+  filter: {
+    from: 'email.informeddelivery.usps.com',
+  },
+  actions: {
+    archive: true,
+    labels: ['Money / Statements'],
+  }
+};
+
 local rules = [
   recruiters,
   lyftRides,
@@ -375,6 +387,7 @@ local rules = [
   newsletterSF,
   statments,
   receipts,
+  mailbox,
 ];
 
 {
