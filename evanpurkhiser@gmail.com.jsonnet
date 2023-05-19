@@ -349,7 +349,7 @@ local receipts = {
   },
   actions: {
     archive: true,
-    labels: ['Money / Statements'],
+    labels: ['Money / Receipts'],
   }
 };
 
