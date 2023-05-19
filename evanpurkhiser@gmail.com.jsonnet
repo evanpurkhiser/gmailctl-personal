@@ -4,6 +4,7 @@ local labels = [{ name: l } for l in [
   'Brand / Theory',
   'Brand / Club Monaco',
   'Money / Statements',
+  'Money / Receipts',
   'Music / Bandcamp',
   'Music / Promos',
   'Newsletter / Reading',
@@ -306,8 +307,8 @@ local newsletterSF = {
   },
 };
 
-// Various bank / investment statments / reciepts, I don't need to see this but
-// like to keep them for record
+// Various bank / investment statments, I don't need to see this but like to
+// keep them for record
 local statments = {
   filter: {
     or: [
@@ -315,7 +316,6 @@ local statments = {
       { subject: 'Investment prospectus' },
       { subject: 'Your Wealthfront Account: Funds Have Been Added' },
       { subject: 'Your Monthly Wealthfront Brokerage Statement' },
-
       // Schwab
       { subject: "Your account statement is available" },
       { subject: "Schwab eConfirms for account ending" },
@@ -326,9 +326,25 @@ local statments = {
       // Google
       { subject: "Google Workspace: Your invoice is available for evanpurkhiser.com" },
       { subject: "View your monthly statement from Google Pay" },
+    ],
+  },
+  actions: {
+    archive: true,
+    labels: ['Money / Statements'],
+  }
+};
+
+// Various email receipts
+local receipts = {
+  filter: {
+    or: [
+      // Uber Eats
+      { subject: 'order with Uber Eats' },
       // Digital Ocean
       { subject: "DigitalOcean - Payment Receipt" },
       { has: "Thanks for using DigitalOcean" },
+      // Any service that uses square
+      { has: 'Square automatically sends receipts to the email address you used at any Square seller'}
     ],
   },
   actions: {
@@ -358,6 +374,7 @@ local rules = [
   newsletterShopping,
   newsletterSF,
   statments,
+  receipts,
 ];
 
 {
