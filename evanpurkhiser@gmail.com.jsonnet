@@ -368,7 +368,7 @@ local mailbox = {
   },
   actions: {
     archive: true,
-    labels: ['Money / Statements'],
+    labels: ['Mailbox'],
   }
 };
 
