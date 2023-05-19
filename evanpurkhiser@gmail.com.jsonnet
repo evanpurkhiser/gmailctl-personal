@@ -346,6 +346,13 @@ local receipts = {
       { has: "Thanks for using DigitalOcean" },
       // Any service that uses square
       { has: 'Square automatically sends receipts to the email address you used at any Square seller'}
+      // Amara Financial invocies
+      {
+        and: [
+          { subject: "Payment Receipt for Invoice" },
+          { from: "mailer@waveapps.com" },
+        ],
+      }
     ],
   },
   actions: {
