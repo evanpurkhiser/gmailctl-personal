@@ -353,6 +353,8 @@ local receipts = {
           { from: "mailer@waveapps.com" },
         ],
       },
+      // Toast
+      { from: 'no-reply@toasttab.com' },
     ],
   },
   actions: {
