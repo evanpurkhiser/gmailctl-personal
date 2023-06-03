@@ -140,7 +140,12 @@ local venmoCashout = {
   filter: {
     and: [
       { from: 'venmo@venmo.com' },
-      { subject: 'Your Venmo bank transfer has been initiated' },
+      {
+        or: [
+          { subject: 'Your Venmo bank transfer has been initiated' },
+          { subject: 'Your Venmo Standard transfer has been initiated' },
+        ],
+      },
     ],
   },
   actions: {
