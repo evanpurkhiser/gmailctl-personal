@@ -323,6 +323,7 @@ local statments = {
       { subject: 'Your Wealthfront Account: Funds Have Been Added' },
       { subject: 'Your Monthly Wealthfront Brokerage Statement' },
       // Schwab
+      { subject: 'Your account eStatement is available' },
       { subject: 'Your account statement is available' },
       { subject: 'Schwab eConfirms for account ending' },
       // Chase
