@@ -157,7 +157,7 @@ local venmoCashout = {
 
 local rentPayments = {
   filter: {
-    subject: "Pine/Polk, LLC - Online Payment Confirmation"
+    subject: 'Pine/Polk, LLC - Online Payment Confirmation',
   },
   actions: {
     archive: true,
@@ -245,7 +245,7 @@ local brandTheory = {
   },
   actions: {
     archive: true,
-    labels: ['Brand / Theory']
+    labels: ['Brand / Theory'],
   },
 };
 
@@ -255,7 +255,7 @@ local brandClubMonaco = {
   },
   actions: {
     archive: true,
-    labels: ['Brand / Club Monaco']
+    labels: ['Brand / Club Monaco'],
   },
 };
 
@@ -270,7 +270,7 @@ local shippedNotification = {
   actions: {
     archive: true,
     labels: ['Shipping Notification'],
-    category: "personal",
+    category: 'personal',
   },
 };
 
@@ -323,21 +323,21 @@ local statments = {
       { subject: 'Your Wealthfront Account: Funds Have Been Added' },
       { subject: 'Your Monthly Wealthfront Brokerage Statement' },
       // Schwab
-      { subject: "Your account statement is available" },
-      { subject: "Schwab eConfirms for account ending" },
+      { subject: 'Your account statement is available' },
+      { subject: 'Schwab eConfirms for account ending' },
       // Chase
-      { subject: "Your statement is ready for account" },
-      { subject: "Your statement is ready for credit card ending" },
-      { subject: "Your Chase Sapphire Reserve automatic payment is scheduled" },
+      { subject: 'Your statement is ready for account' },
+      { subject: 'Your statement is ready for credit card ending' },
+      { subject: 'Your Chase Sapphire Reserve automatic payment is scheduled' },
       // Google
-      { subject: "Google Workspace: Your invoice is available for evanpurkhiser.com" },
-      { subject: "View your monthly statement from Google Pay" },
+      { subject: 'Google Workspace: Your invoice is available for evanpurkhiser.com' },
+      { subject: 'View your monthly statement from Google Pay' },
     ],
   },
   actions: {
     archive: true,
     labels: ['Money / Statements'],
-  }
+  },
 };
 
 // Various email receipts
@@ -347,15 +347,15 @@ local receipts = {
       // Uber Eats
       { subject: 'order with Uber Eats' },
       // Digital Ocean
-      { subject: "DigitalOcean - Payment Receipt" },
-      { has: "Thanks for using DigitalOcean" },
+      { subject: 'DigitalOcean - Payment Receipt' },
+      { has: 'Thanks for using DigitalOcean' },
       // Any service that uses square
-      { has: 'Square automatically sends receipts to the email address you used at any Square seller'},
+      { has: 'Square automatically sends receipts to the email address you used at any Square seller' },
       // Amara Financial invocies
       {
         and: [
-          { subject: "Payment Receipt for Invoice" },
-          { from: "mailer@waveapps.com" },
+          { subject: 'Payment Receipt for Invoice' },
+          { from: 'mailer@waveapps.com' },
         ],
       },
       // Toast
@@ -365,7 +365,7 @@ local receipts = {
   actions: {
     archive: true,
     labels: ['Money / Receipts'],
-  }
+  },
 };
 
 // USPS Informed delivery
@@ -376,7 +376,7 @@ local mailbox = {
   actions: {
     archive: true,
     labels: ['Mailbox'],
-  }
+  },
 };
 
 // Things I just straight don't care about
