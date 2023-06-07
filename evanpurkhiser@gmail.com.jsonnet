@@ -379,6 +379,24 @@ local mailbox = {
   }
 };
 
+// Things I just straight don't care about
+local ignoredList = [
+  // Google cloud subprocess update emails
+  {
+    and: [
+      { from: 'Google Cloud Platform' },
+      { subject: 'Third-Party Subprocessors list' },
+    ],
+  },
+];
+local ignored = {
+  filter: { or: ignoredList },
+  actions: {
+    archive: true,
+    markRead: true,
+  },
+};
+
 local rules = [
   recruiters,
   lyftRides,
@@ -402,6 +420,7 @@ local rules = [
   statments,
   receipts,
   mailbox,
+  ignored,
 ];
 
 {
