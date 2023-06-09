@@ -48,6 +48,7 @@ local recruiters = {
       { has: 'Series A startup' },
       { has: 'Series B startup' },
       { has: 'Series C startup' },
+      { has: 'We have raised' },
     ],
   },
   actions: {
