@@ -224,6 +224,7 @@ local privacyPolicyUpdates = {
   filter: {
     or: [
       { subject: 'privacy' },
+      { subject: 'policies' },
       { subject: 'terms' },
     ],
   },
