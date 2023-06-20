@@ -394,6 +394,8 @@ local ignoredList = [
       { subject: 'Third-Party Subprocessors list' },
     ],
   },
+  // Trublue point emails
+  { subject: 'Your TrueBlue statement has landed' },
 ];
 local ignored = {
   filter: { or: ignoredList },
