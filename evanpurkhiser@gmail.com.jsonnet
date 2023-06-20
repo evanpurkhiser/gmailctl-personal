@@ -222,7 +222,10 @@ local musicPromos = {
 // have absolutely never once read these and never will. Just archive
 local privacyPolicyUpdates = {
   filter: {
-    subject: 'privacy',
+    or: [
+      { subject: 'privacy' },
+      { subject: 'terms' },
+    ],
   },
   actions: {
     archive: true,
