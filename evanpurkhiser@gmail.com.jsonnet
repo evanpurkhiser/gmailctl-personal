@@ -50,6 +50,7 @@ local recruiters = {
       { has: 'Series B startup' },
       { has: 'Series C startup' },
       { has: 'We have raised' },
+      { has: 'founding engineer' },
     ],
   },
   actions: {
