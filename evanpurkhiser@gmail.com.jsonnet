@@ -247,7 +247,7 @@ local iptorrentsNotice = {
 
 local brandTheory = {
   filter: {
-    from: 'theory@e.theory.com',
+    from: 'theory.com',
   },
   actions: {
     archive: true,
@@ -267,7 +267,7 @@ local brandCos = {
 
 local brandClubMonaco = {
   filter: {
-    from: 'emails.clubmonaco.com',
+    from: 'clubmonaco.com',
   },
   actions: {
     archive: true,
