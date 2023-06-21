@@ -1,6 +1,7 @@
 local lib = import 'gmailctl.libsonnet';
 
 local labels = [{ name: l } for l in [
+  'Brand / COS',
   'Brand / Club Monaco',
   'Brand / Theory',
   'Mailbox',
@@ -254,6 +255,16 @@ local brandTheory = {
   },
 };
 
+local brandCos = {
+  filter: {
+    from: 'cos.com',
+  },
+  actions: {
+    archive: true,
+    labels: ['Brand / COS'],
+  },
+};
+
 local brandClubMonaco = {
   filter: {
     from: 'emails.clubmonaco.com',
@@ -420,6 +431,7 @@ local rules = [
   privacyPolicyUpdates,
   iptorrentsNotice,
   brandTheory,
+  brandCos,
   brandClubMonaco,
   shippedNotification,
   newsletterReading,
