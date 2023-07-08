@@ -212,7 +212,11 @@ local musicBandcamp = {
 // things like bandcamp.
 local musicPromos = {
   filter: {
-    from: 'promobox-reply@label-worx.com',
+    or: [
+      { from: 'promobox-reply@label-worx.com' },
+      { from: 'justicehardcore2013@gmail.com' },
+      { from: 'alstormuk@gmail.com' },
+    ],
   },
   actions: {
     archive: true,
