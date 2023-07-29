@@ -9,6 +9,7 @@ local labels = [{ name: l } for l in [
   'Money / Statements',
   'Music / Bandcamp',
   'Music / Promos',
+  'Music / SF Events',
   'Newsletter / Reading',
   'Newsletter / SF',
   'Newsletter / Shopping',
@@ -224,6 +225,20 @@ local musicPromos = {
   },
 };
 
+// Emails for raves + other shows in SF
+local musicSFEvents = {
+  filter: {
+    or: [
+      { from: 'info@pluralliance.org' },
+      { from: 'info@trancefamilysf.com' },
+    ],
+  },
+  actions: {
+    archive: true,
+    labels: ['Music / SF Events'],
+  },
+};
+
 // Companies appear to be required to send privacy policy change notices. I
 // have absolutely never once read these and never will. Just archive
 local privacyPolicyUpdates = {
@@ -433,6 +448,7 @@ local rules = [
   sentryOptionGrants,
   musicBandcamp,
   musicPromos,
+  musicSFEvents,
   privacyPolicyUpdates,
   iptorrentsNotice,
   brandTheory,
