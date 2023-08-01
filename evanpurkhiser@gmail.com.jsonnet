@@ -183,7 +183,7 @@ local schwabProxy = {
 // New sentry option grants, useful to keep for historic reasons
 local sentryOptionGrants = {
   filter: {
-    subject: 'You have vested new Functional Software, Inc, DBA Sentry options',
+    subject: 'You have newly vested Functional Software, Inc, DBA Sentry options',
   },
   actions: {
     archive: true,
