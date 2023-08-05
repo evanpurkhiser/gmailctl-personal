@@ -355,9 +355,8 @@ local statments = {
   filter: {
     or: [
       // Wealthfront
-      { subject: 'Investment prospectus' },
+      { from: 'no-reply@em.wealthfront.com' },
       { subject: 'Your Wealthfront Account: Funds Have Been Added' },
-      { subject: 'Your Monthly Wealthfront Brokerage Statement' },
       // Schwab
       { subject: 'Your account eStatement is available' },
       { subject: 'Your account statement is available' },
