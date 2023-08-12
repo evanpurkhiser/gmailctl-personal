@@ -370,6 +370,8 @@ local statments = {
       // Google
       { subject: 'Google Workspace: Your invoice is available for evanpurkhiser.com' },
       { subject: 'View your monthly statement from Google Pay' },
+      // Venmo statements
+      { and: [{ from: 'venmo@venmo.com' }, { subject: 'Transaction History' }] },
     ],
   },
   actions: {
