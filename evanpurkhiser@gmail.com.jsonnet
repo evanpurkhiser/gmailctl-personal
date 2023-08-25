@@ -217,6 +217,7 @@ local musicPromos = {
       { from: 'promobox-reply@label-worx.com' },
       { from: 'justicehardcore2013@gmail.com' },
       { from: 'alstormuk@gmail.com' },
+      { from: 'info@oneseventy.net' },
     ],
   },
   actions: {
