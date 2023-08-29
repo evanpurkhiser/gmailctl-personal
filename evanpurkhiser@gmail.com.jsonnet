@@ -38,6 +38,7 @@ local recruiters = {
       { has: 'talent associate' },
       { has: 'talent scout' },
       { has: 'talent acquisition' },
+      { has: 'talent partner' },
       { has: 'talent & growth' },
       { has: 'talent specialist' },
       { has: 'talent search specialist' },
