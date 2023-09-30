@@ -4,6 +4,7 @@ local labels = [{ name: l } for l in [
   'Brand / COS',
   'Brand / Club Monaco',
   'Brand / Theory',
+  'CCSF',
   'Mailbox',
   'Money / Receipts',
   'Money / Statements',
@@ -423,6 +424,24 @@ local mailbox = {
   },
 };
 
+// Emails from CCSF I just don't care about
+local ccsf = {
+  filter: {
+    or: [
+      { from: 'finaid@ccsf.edu ' },
+      { from: 'facilities@ccsf.edu' },
+      { from: 'studentaffairsdiv@ccsf.edu' },
+      { from: 'citynotes@ccsf.edu' },
+      { from: 'studenthealth@ccsf.edu' },
+    ],
+  },
+  actions: {
+    archive: true,
+    labels: ['CCSF'],
+  },
+};
+
+
 // Things I just straight don't care about
 local ignoredList = [
   // Google cloud subprocess update emails
@@ -468,6 +487,7 @@ local rules = [
   statments,
   receipts,
   mailbox,
+  ccsf,
   ignored,
 ];
 
