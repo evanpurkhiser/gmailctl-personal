@@ -347,6 +347,7 @@ local newsletterSF = {
   filter: {
     or: [
       { from: 'sfmoma.org' },
+      { from: 'asianart.org' },
       { from: 'sfballet.org' },
       { from: 'exploratorium.edu' },
     ],
