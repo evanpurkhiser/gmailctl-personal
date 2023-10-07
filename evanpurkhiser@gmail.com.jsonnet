@@ -56,6 +56,7 @@ local recruiters = {
       { has: 'Series C startup' },
       { has: 'We have raised' },
       { has: 'founding engineer' },
+      { has: 'connect with me on LinkedIn' },
     ],
   },
   actions: {
