@@ -319,6 +319,8 @@ local newsletterReading = {
   filter: {
     or: [
       { from: 'setstudio@buttondown.email' },
+      { from: 'info@tympanus.net' },
+      { from: 'hello@gilhuybrecht.com' },
     ],
   },
   actions: {
