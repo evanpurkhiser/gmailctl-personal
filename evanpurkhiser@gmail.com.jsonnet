@@ -57,6 +57,7 @@ local recruiters = {
       { has: 'We have raised' },
       { has: 'founding engineer' },
       { has: 'connect with me on LinkedIn' },
+      { has: 'cash flow positive' },
     ],
   },
   actions: {
