@@ -376,6 +376,8 @@ local statments = {
       { subject: 'Your statement is ready for account' },
       { subject: 'Your statement is ready for credit card ending' },
       { subject: 'Your Chase Sapphire Reserve automatic payment is scheduled' },
+      // United Healthcare
+      { subject: "Here's your new Health Statement from UnitedHealthcare" },
       // Human interest
       { from: 'support@humaninterest.com' },
       // Google
