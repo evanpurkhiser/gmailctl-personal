@@ -436,10 +436,12 @@ local mailbox = {
 local ccsf = {
   filter: {
     or: [
-      { from: 'finaid@ccsf.edu ' },
-      { from: 'facilities@ccsf.edu' },
-      { from: 'studentaffairsdiv@ccsf.edu' },
       { from: 'citynotes@ccsf.edu' },
+      { from: 'district_police_dept@ccsf.edu' },
+      { from: 'facilities@ccsf.edu' },
+      { from: 'finaid@ccsf.edu ' },
+      { from: 'itsAnnouncement@ccsf.edu' },
+      { from: 'studentaffairsdiv@ccsf.edu' },
       { from: 'studenthealth@ccsf.edu' },
     ],
   },
