@@ -323,6 +323,7 @@ local newsletterReading = {
       { from: 'setstudio@buttondown.email' },
       { from: 'info@tympanus.net' },
       { from: 'hello@gilhuybrecht.com' },
+      { from: 'me@arun.is' },
     ],
   },
   actions: {
