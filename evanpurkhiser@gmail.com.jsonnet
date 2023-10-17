@@ -443,6 +443,7 @@ local ccsf = {
       { from: 'itsAnnouncement@ccsf.edu' },
       { from: 'studentaffairsdiv@ccsf.edu' },
       { from: 'studenthealth@ccsf.edu' },
+      { from: 'handshake@mail.joinhandshake.com' },
     ],
   },
   actions: {
