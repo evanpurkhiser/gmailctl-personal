@@ -5,6 +5,7 @@ local labels = [{ name: l } for l in [
   'Brand / Club Monaco',
   'Brand / Theory',
   'CCSF',
+  'Discounts',
   'Mailbox',
   'Money / Receipts',
   'Money / Statements',
