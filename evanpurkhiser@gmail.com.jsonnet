@@ -3,6 +3,7 @@ local lib = import 'gmailctl.libsonnet';
 local labels = [{ name: l } for l in [
   'Brand / COS',
   'Brand / Club Monaco',
+  'Brand / Sheec Socks',
   'Brand / Theory',
   'CCSF',
   'Discounts',
@@ -294,6 +295,16 @@ local brandCos = {
   },
 };
 
+local brandSheecSocks = {
+  filter: {
+    from: 'sheecsocks.com',
+  },
+  actions: {
+    archive: true,
+    labels: ['Brand / Sheec Socks'],
+  },
+};
+
 local brandClubMonaco = {
   filter: {
     from: 'clubmonaco.com',
@@ -492,6 +503,7 @@ local rules = [
   iptorrentsNotice,
   brandTheory,
   brandCos,
+  brandSheecSocks,
   brandClubMonaco,
   shippedNotification,
   newsletterReading,
