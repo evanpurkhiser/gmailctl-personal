@@ -45,6 +45,7 @@ local recruiters = {
       { has: 'talent & growth' },
       { has: 'talent specialist' },
       { has: 'talent search specialist' },
+      { has: 'talent director' },
       // Things not recruiters call themselves but still try to recruit
       { has: 'VP of Engineering' },
       { has: 'I’m the CTO' },
@@ -453,10 +454,11 @@ local ccsf = {
       { from: 'district_police_dept@ccsf.edu' },
       { from: 'facilities@ccsf.edu' },
       { from: 'finaid@ccsf.edu ' },
+      { from: 'handshake@mail.joinhandshake.com' },
       { from: 'itsAnnouncement@ccsf.edu' },
+      { from: 'research@ccsf.edu' },
       { from: 'studentaffairsdiv@ccsf.edu' },
       { from: 'studenthealth@ccsf.edu' },
-      { from: 'handshake@mail.joinhandshake.com' },
     ],
   },
   actions: {
