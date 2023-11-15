@@ -322,6 +322,7 @@ local shippedNotification = {
       { has: 'has shipped' },
       { subject: 'Delivered: Your Amazon.com order' },
       { subject: 'Your Amazon.com order' },
+      { subject: 'Your Amazon package will be delivered today' },
     ],
   },
   actions: {
