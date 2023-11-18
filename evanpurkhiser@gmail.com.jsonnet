@@ -480,6 +480,8 @@ local ignoredList = [
   },
   // Trublue point emails
   { subject: 'Your TrueBlue statement has landed' },
+  // find my iphone notificatin
+  { subject: 'A sound was played on Evan’s iPhone' },
 ];
 local ignored = {
   filter: { or: ignoredList },
