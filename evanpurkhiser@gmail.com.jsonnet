@@ -461,6 +461,7 @@ local ccsf = {
       { from: 'research@ccsf.edu' },
       { from: 'studentaffairsdiv@ccsf.edu' },
       { from: 'studenthealth@ccsf.edu' },
+      { from: 'ccsfdist@ccsf.edu' },
     ],
   },
   actions: {
