@@ -77,7 +77,12 @@ local lyftRides = {
   filter: {
     and: [
       { from: 'no-reply@lyftmail.com' },
-      { subject: 'Your Ride with' },
+      {
+        or: [
+          { subject: 'Your Ride with' },
+          { subject: 'Your Lyft Bike ride' },
+        ],
+      },
     ],
   },
   actions: {
