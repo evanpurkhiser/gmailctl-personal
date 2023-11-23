@@ -465,6 +465,7 @@ local ccsf = {
       { from: 'handshake@mail.joinhandshake.com' },
       { from: 'itsAnnouncement@ccsf.edu' },
       { from: 'research@ccsf.edu' },
+      { from: 'studentactivities@ccsf.edu' },
       { from: 'studentaffairsdiv@ccsf.edu' },
       { from: 'studenthealth@ccsf.edu' },
       { from: 'ccsfdist@ccsf.edu' },
