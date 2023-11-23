@@ -373,6 +373,7 @@ local newsletterSF = {
       { from: 'asianart.org' },
       { from: 'sfballet.org' },
       { from: 'exploratorium.edu' },
+      { from: 'escape@palace-games.com' },
     ],
   },
   actions: {
