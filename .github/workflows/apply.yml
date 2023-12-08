@@ -60,6 +60,7 @@ jobs:
 
             ```diff
             ${{ steps.diff.outputs.result }}
+            ```
 
       - name: Apply changes
         run: gmailctl apply --yes --remove-labels -f ${{ matrix.email}}.jsonnet
