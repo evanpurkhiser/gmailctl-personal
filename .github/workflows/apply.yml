@@ -10,6 +10,13 @@ jobs:
     permissions:
       contents: write
 
+    environment: ${{ matrix.email }}
+    strategy:
+      matrix:
+        email:
+          - evanpurkhiser@gmail.com
+          - evan.purkhiser@sentry.io
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-go@v3
@@ -33,7 +40,7 @@ jobs:
 
       - name: Produce filter diff
         run: |
-          gmailctl diff -f evanpurkhiser@gmail.com.jsonnet 2>&1 | tee filters.diff
+          gmailctl diff -f ${{ matrix.email}}.jsonnet 2>&1 | tee filters.diff
 
       - name: Read diff output into variable
         uses: actions/github-script@v6
@@ -55,4 +62,4 @@ jobs:
             ${{ steps.diff.outputs.result }}
 
       - name: Apply changes
-        run: gmailctl apply --yes --remove-labels -f evanpurkhiser@gmail.com.jsonnet
+        run: gmailctl apply --yes --remove-labels -f ${{ matrix.email}}.jsonnet
