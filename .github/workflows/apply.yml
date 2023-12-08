@@ -4,18 +4,47 @@ on:
     branches: [main]
 
 jobs:
+  changed-emails:
+    name: changed-emails
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+
+    # Output list of changed email files as a JSON array. This will be used as
+    # the input for the matrix for environments to apply.
+    outputs:
+      emails: ${{ steps.emails.outputs.list }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          list-files: json
+          filters: |
+            emails: '*.jsonnet'
+
+      # Trim the trailing `.jsonnet` extension from the emails
+      - name: Normalize emails
+        id: emails
+        run: |
+          list="$(echo '${{ steps.filter.outputs.emails_files }}' | jq -rc 'map(sub(".jsonnet$"; ""))')"
+          echo "list=${list}" >> $GITHUB_OUTPUT
+
   apply:
-    name: apply
+    name: apply for ${{ matrix.email }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
-    environment: ${{ matrix.email }}
+    needs: changed-emails
+    if: ${{ needs.changed-emails.outputs.emails != '[]' }}
+
     strategy:
       matrix:
-        email:
-          - evanpurkhiser@gmail.com
-          - evan.purkhiser@sentry.io
+        email: ${{ fromJson(needs.changed-emails.outputs.emails) }}
+
+    environment: ${{ matrix.email }}
 
     steps:
       - uses: actions/checkout@v3
