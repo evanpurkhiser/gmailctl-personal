@@ -121,8 +121,13 @@ local meetRecordings = {
 
 local namely = {
   filter: {
-    or: [
-      { subject: 'Time off request approved' },
+    and: [
+      { from: 'no-reply@namely.com' },
+      {
+        or: [
+          { subject: 'Time off request approved' },
+        ],
+      },
     ],
   },
   actions: {
