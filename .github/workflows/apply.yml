@@ -40,7 +40,7 @@ jobs:
 
       - name: Produce filter diff
         run: |
-          gmailctl diff -f ${{ matrix.email}}.jsonnet 2>&1 | tee filters.diff
+          gmailctl diff -f ${{ matrix.email }}.jsonnet 2>&1 | tee filters.diff
 
       - name: Read diff output into variable
         uses: actions/github-script@v6
@@ -56,11 +56,11 @@ jobs:
         with:
           token: ${{ secrets.github_token }}
           body: |
-            The following changes are applied by this commit
+            The following changes are applied to **${{ matrix.email }}** by this commit
 
             ```diff
             ${{ steps.diff.outputs.result }}
             ```
 
       - name: Apply changes
-        run: gmailctl apply --yes --remove-labels -f ${{ matrix.email}}.jsonnet
+        run: gmailctl apply --yes --remove-labels -f ${{ matrix.email }}.jsonnet
