@@ -63,6 +63,7 @@ local recruiters = {
       { has: 'connect with me on LinkedIn' },
       { has: 'cash flow positive' },
       { has: 'product-market fit' },
+      { has: 'vc-funded' },
     ],
   },
   actions: {
