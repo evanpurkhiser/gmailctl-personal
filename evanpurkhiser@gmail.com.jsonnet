@@ -447,7 +447,10 @@ local receipts = {
 // USPS Informed delivery
 local mailbox = {
   filter: {
-    from: 'email.informeddelivery.usps.com',
+    or: [
+      { from: 'email.informeddelivery.usps.com' },
+      { subject: 'Package Delivery Virtual Doorman' },
+    ],
   },
   actions: {
     archive: true,
