@@ -436,6 +436,13 @@ local receipts = {
       },
       // Toast
       { from: 'no-reply@toasttab.com' },
+      // Spectrum internet
+      {
+        and: [
+          { subject: 'Thanks for Your Payment' },
+          { from: 'myaccount@spectrumemails.com' },
+        ],
+      },
     ],
   },
   actions: {
