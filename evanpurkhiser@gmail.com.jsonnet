@@ -450,6 +450,8 @@ local receipts = {
           { from: 'coned-bill@emailconed.com' },
         ],
       },
+      // Apartment rent
+      { subject: 'Clear Sky Initiatives - Online Payment Confirmation' },
     ],
   },
   actions: {
