@@ -443,6 +443,13 @@ local receipts = {
           { from: 'myaccount@spectrumemails.com' },
         ],
       },
+      // ConEdison
+      {
+        and: [
+          { subject: 'Your Con Edison bill is ready' },
+          { from: 'coned-bill@emailconed.com' },
+        ],
+      },
     ],
   },
   actions: {
