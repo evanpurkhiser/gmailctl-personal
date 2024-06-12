@@ -64,6 +64,7 @@ local recruiters = {
       { has: 'cash flow positive' },
       { has: 'product-market fit' },
       { has: 'vc-funded' },
+      { has: 'I lead recruiting' },
     ],
   },
   actions: {
