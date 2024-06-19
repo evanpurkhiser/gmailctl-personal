@@ -135,6 +135,28 @@ local doordash = {
   },
 };
 
+
+// Spectrum
+local spectrum = {
+  filter: {
+    and: [
+      { or: [
+
+        { subject: 'Your Payment Is Scheduled Soon' },
+        { subject: 'Spectrum Alert: Service Outage' },
+        { subject: 'Spectrum Alert: Service Restored' },
+        { subject: 'Your Service is Restored' },
+        { subject: 'Service Alert' },
+      ] },
+      { from: 'MyAccount@spectrumemails.com' },
+    ],
+  },
+  actions: {
+    archive: true,
+    markRead: true,
+  },
+};
+
 // Archive venmo notifications
 local venmoPaid = {
   filter: {
@@ -526,6 +548,7 @@ local rules = [
   lyftRides,
   uberRides,
   doordash,
+  spectrum,
   venmoPaid,
   venmoCashout,
   rentPayments,
