@@ -371,6 +371,7 @@ local newsletterReading = {
       { from: 'hello@gilhuybrecht.com' },
       { from: 'me@arun.is' },
       { from: 'theindex@buttondown.email' },
+      { from: 'info@email.1password.com' },
     ],
   },
   actions: {
