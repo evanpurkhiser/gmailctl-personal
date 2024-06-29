@@ -370,6 +370,7 @@ local newsletterReading = {
       { from: 'info@tympanus.net' },
       { from: 'hello@gilhuybrecht.com' },
       { from: 'me@arun.is' },
+      { from: 'theindex@buttondown.email' },
     ],
   },
   actions: {
