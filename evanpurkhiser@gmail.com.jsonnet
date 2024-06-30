@@ -528,6 +528,13 @@ local flights = {
         { from: 'virginamerica.com' },
         { subject: 'Virgin America Reservation' },
       ] },
+      { and: [
+        { from: 'southwest.com' },
+        { or: [
+          { subject: "You're going to" },
+          { subject: 'Flight reservation' },
+        ] },
+      ] },
     ],
   },
   actions: {
