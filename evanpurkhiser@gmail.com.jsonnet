@@ -9,6 +9,7 @@ local labels = [{ name: l } for l in [
   'CCSF',
   'Discounts',
   'Mailbox',
+  'Flight Confirmations',
   'Money / Receipts',
   'Money / Statements',
   'Music / Bandcamp',
@@ -486,6 +487,54 @@ local receipts = {
   },
 };
 
+// Flight confirmation emails
+local flights = {
+  filter: {
+    or: [
+      {
+        from: 'alaskaair.com',
+        subject: 'your confirmation receipt',
+      },
+      {
+        from: 'united.com',
+        subject: 'eTicket Itinerary and Receipt for Confirmation',
+      },
+      {
+        from: 'delta.com',
+        subject: 'your flight receipt - EVAN PURKHISER',
+      },
+      {
+        from: 'aa.com',
+        subject: 'Your trip confirmation',
+      },
+      {
+        from: 'spirit-airlines.com',
+        subject: 'Spirit Airlines Flight Confirmation',
+      },
+      {
+        from: 'jetblue.com',
+        subject: 'JetBlue booking confirmation',
+      },
+      {
+        from: 'aircanada.ca',
+        subject: 'Booking Reference',
+      },
+      {
+        from: 'easyjet.com',
+        subject: 'easyJet booking reference',
+      },
+      {
+        from: 'virginamerica.com',
+        subject: 'Virgin America Reservation',
+      },
+    ],
+  },
+  actions: {
+    labels: ['Flight Confirmations'],
+  },
+};
+
+
 // USPS Informed delivery
 local mailbox = {
   filter: {
@@ -572,6 +621,7 @@ local rules = [
   newsletterSF,
   statments,
   receipts,
+  flights,
   mailbox,
   ccsf,
   ignored,
