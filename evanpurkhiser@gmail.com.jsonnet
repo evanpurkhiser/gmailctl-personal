@@ -542,6 +542,14 @@ local flights = {
         { from: 'austrian.com' },
         { subject: 'Your booking to' },
       ] },
+      { and: [
+        { or: [
+          { from: 'chasetravel.com' },
+          { from: 'chase.com' },
+        ] },
+        { subject: 'Travel Reservation Center Trip ID' },
+        { has: 'Flight' },
+      ] },
     ],
   },
   actions: {
