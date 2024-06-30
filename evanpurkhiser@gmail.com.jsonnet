@@ -549,6 +549,7 @@ local flights = {
         ] },
         { subject: 'Travel Reservation Center Trip ID' },
         { has: 'Flight' },
+        { not: { has: 'Hotel Reservation' } },
       ] },
     ],
   },
