@@ -519,6 +519,10 @@ local flights = {
         { subject: 'JetBlue booking confirmation' },
       ] },
       { and: [
+        { from: 'flyfrontier.com' },
+        { subject: 'Reservation Confirmation' },
+      ] },
+      { and: [
         { from: 'aircanada.ca' },
         { subject: 'Booking Reference' },
         { has: 'Booking Confirmation' },
