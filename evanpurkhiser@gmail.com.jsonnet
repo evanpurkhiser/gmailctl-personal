@@ -564,6 +564,10 @@ local flights = {
         { subject: 'EVA AIR ELECTRONIC TICKET-EMD RECEIPT' },
         { has: 'ELECTRONIC TICKET RECEIPT' },
       ] },
+      { and: [
+        { from: 'flyscoot.com' },
+        { subject: 'Your Scoot booking confirmation' },
+      ] },
     ],
   },
   actions: {
