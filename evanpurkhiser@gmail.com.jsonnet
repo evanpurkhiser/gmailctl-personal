@@ -538,6 +538,10 @@ local flights = {
           { subject: 'Flight reservation' },
         ] },
       ] },
+      { and: [
+        { from: 'austrian.com' },
+        { subject: 'Your booking to' },
+      ] },
     ],
   },
   actions: {
