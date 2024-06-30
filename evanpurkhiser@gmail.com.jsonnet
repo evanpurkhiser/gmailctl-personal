@@ -491,42 +491,42 @@ local receipts = {
 local flights = {
   filter: {
     or: [
-      {
-        from: 'alaskaair.com',
-        subject: 'your confirmation receipt',
-      },
-      {
-        from: 'united.com',
-        subject: 'eTicket Itinerary and Receipt for Confirmation',
-      },
-      {
-        from: 'delta.com',
-        subject: 'your flight receipt - EVAN PURKHISER',
-      },
-      {
-        from: 'aa.com',
-        subject: 'Your trip confirmation',
-      },
-      {
-        from: 'spirit-airlines.com',
-        subject: 'Spirit Airlines Flight Confirmation',
-      },
-      {
-        from: 'jetblue.com',
-        subject: 'JetBlue booking confirmation',
-      },
-      {
-        from: 'aircanada.ca',
-        subject: 'Booking Reference',
-      },
-      {
-        from: 'easyjet.com',
-        subject: 'easyJet booking reference',
-      },
-      {
-        from: 'virginamerica.com',
-        subject: 'Virgin America Reservation',
-      },
+      { and: [
+        { from: 'alaskaair.com' },
+        { subject: 'your confirmation receipt' },
+      ] },
+      { and: [
+        { from: 'united.com' },
+        { subject: 'eTicket Itinerary and Receipt for Confirmation' },
+      ] },
+      { and: [
+        { from: 'delta.com' },
+        { subject: 'your flight receipt - EVAN PURKHISER' },
+      ] },
+      { and: [
+        { from: 'aa.com' },
+        { subject: 'Your trip confirmation' },
+      ] },
+      { and: [
+        { from: 'spirit-airlines.com' },
+        { subject: 'Spirit Airlines Flight Confirmation' },
+      ] },
+      { and: [
+        { from: 'jetblue.com' },
+        { subject: 'JetBlue booking confirmation' },
+      ] },
+      { and: [
+        { from: 'aircanada.ca' },
+        { subject: 'Booking Reference' },
+      ] },
+      { and: [
+        { from: 'easyjet.com' },
+        { subject: 'easyJet booking reference' },
+      ] },
+      { and: [
+        { from: 'virginamerica.com' },
+        { subject: 'Virgin America Reservation' },
+      ] },
     ],
   },
   actions: {
