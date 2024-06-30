@@ -547,6 +547,10 @@ local flights = {
         { subject: 'Your booking to' },
       ] },
       { and: [
+        { from: 'lot.com' },
+        { subject: 'Booking confirmation for reservation' },
+      ] },
+      { and: [
         { or: [
           { from: 'chasetravel.com' },
           { from: 'chase.com' },
