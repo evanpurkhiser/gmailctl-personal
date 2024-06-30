@@ -505,7 +505,10 @@ local flights = {
       ] },
       { and: [
         { from: 'aa.com' },
-        { subject: 'Your trip confirmation' },
+        { or: [
+          { subject: 'Your trip confirmation' }
+          { subject: 'E-Ticket Confirmation' },
+        ] },
       ] },
       { and: [
         { from: 'spirit-airlines.com' },
