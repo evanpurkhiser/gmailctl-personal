@@ -559,6 +559,11 @@ local flights = {
         { has: 'Flight' },
         { not: { has: 'Hotel Reservation' } },
       ] },
+      { and: [
+        { from: 'EVA AIRWAYS' },
+        { subject: 'EVA AIR ELECTRONIC TICKET-EMD RECEIPT' },
+        { has: 'ELECTRONIC TICKET RECEIPT' },
+      ] },
     ],
   },
   actions: {
