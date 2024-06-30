@@ -518,6 +518,7 @@ local flights = {
       { and: [
         { from: 'aircanada.ca' },
         { subject: 'Booking Reference' },
+        { has: 'Booking Confirmation' },
       ] },
       { and: [
         { from: 'easyjet.com' },
