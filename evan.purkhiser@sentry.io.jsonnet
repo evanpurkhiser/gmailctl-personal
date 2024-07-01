@@ -10,6 +10,7 @@ local labels = [{ name: l } for l in [
   'Namely',
   'New Hire Mondays',
   'POPS Newsletter',
+  'PagerDuty',
   'Product Updates',
   'Sentry Alerts',
   'Shipped',
@@ -238,6 +239,16 @@ local technicalSteeringCommittees = {
   },
 };
 
+local pagerduty = {
+  filter: {
+    subject: '[PagerDuty] Evan Purkhiser',
+  },
+  actions: {
+    archive: true,
+    labels: ['PagerDuty'],
+  },
+};
+
 
 local rules = [
   airbase,
@@ -258,6 +269,7 @@ local rules = [
   popsNewsletter,
   weeklySLOs,
   technicalSteeringCommittees,
+  pagerduty,
 ];
 
 {
