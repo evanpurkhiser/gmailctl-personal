@@ -67,6 +67,7 @@ local recruiters = {
       { has: 'product-market fit' },
       { has: 'vc-funded' },
       { has: 'I lead recruiting' },
+      { has: 'you would be a great fit' },
     ],
   },
   actions: {
