@@ -411,9 +411,9 @@ local newsletterSF = {
   },
 };
 
-// Various bank / investment statments, I don't need to see this but like to
+// Various bank / investment statements, I don't need to see this but like to
 // keep them for record
-local statments = {
+local statements = {
   filter: {
     or: [
       // Wealthfront
@@ -455,7 +455,7 @@ local receipts = {
       { has: 'Thanks for using DigitalOcean' },
       // Any service that uses square
       { has: 'Square automatically sends receipts to the email address you used at any Square seller' },
-      // Amara Financial invocies
+      // Amara Financial invoices
       {
         and: [
           { subject: 'Payment Receipt for Invoice' },
@@ -661,7 +661,7 @@ local rules = [
   newsletterReading,
   newsletterShopping,
   newsletterSF,
-  statments,
+  statements,
   receipts,
   flights,
   mailbox,
