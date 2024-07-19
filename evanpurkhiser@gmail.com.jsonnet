@@ -63,6 +63,7 @@ local recruiters = {
       { has: 'founding engineer' },
       { has: 'founding engineering' },
       { has: 'connect with me on LinkedIn' },
+      { has: 'connect on LinkedIn' },
       { has: 'cash flow positive' },
       { has: 'product-market fit' },
       { has: 'vc-funded' },
