@@ -70,6 +70,7 @@ local recruiters = {
       { has: 'vc-funded' },
       { has: 'I lead recruiting' },
       { has: 'you would be a great fit' },
+      { has: 'open to new opportunities' },
     ],
   },
   actions: {
