@@ -37,6 +37,7 @@ local recruiters = {
       { has: 'Sentry (sentry.io)' },
       // Things recruiters call themselves
       { has: 'recruiter' },
+      { has: 'recruiting' },
       { has: 'sourcer' },
       { has: 'technical sourcer' },
       { has: 'talent manager' },
@@ -68,9 +69,11 @@ local recruiters = {
       { has: 'cash flow positive' },
       { has: 'product-market fit' },
       { has: 'vc-funded' },
+      { has: 'vc-backed' },
       { has: 'I lead recruiting' },
       { has: 'you would be a great fit' },
       { has: 'open to new opportunities' },
+      { has: 'your availability is' },
     ],
   },
   actions: {
