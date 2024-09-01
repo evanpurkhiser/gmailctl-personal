@@ -74,6 +74,7 @@ local recruiters = {
       { has: 'you would be a great fit' },
       { has: 'open to new opportunities' },
       { has: 'your availability is' },
+      { has: 'reached out to you' },
     ],
   },
   actions: {
