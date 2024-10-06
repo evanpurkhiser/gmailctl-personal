@@ -582,6 +582,10 @@ local flights = {
         { from: 'gotogate.com' },
         { subject: 'Your trip is confirmed' },
       ] },
+      { and: [
+        { from: 'trip.com' },
+        { subject: 'Flight Booking Confirmed' },
+      ] },
     ],
   },
   actions: {
