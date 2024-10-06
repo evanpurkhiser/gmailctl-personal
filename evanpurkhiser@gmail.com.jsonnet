@@ -578,6 +578,10 @@ local flights = {
         { from: 'flyscoot.com' },
         { subject: 'Your Scoot booking confirmation' },
       ] },
+      { and: [
+        { from: 'gotogate.com' },
+        { subject: 'Your trip is confirmed' },
+      ] },
     ],
   },
   actions: {
