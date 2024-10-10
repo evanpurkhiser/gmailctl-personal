@@ -445,6 +445,8 @@ local statements = {
       { subject: 'View your monthly statement from Google Pay' },
       // Venmo statements
       { and: [{ from: 'venmo@venmo.com' }, { subject: 'Transaction History' }] },
+      // Spectrum
+      { subject: 'Your Spectrum Statement is Ready' },
     ],
   },
   actions: {
