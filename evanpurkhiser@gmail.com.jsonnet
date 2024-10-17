@@ -58,6 +58,7 @@ local recruiters = {
       { has: 'the hiring manager' },
       { has: 'job description' },
       { has: 'early-stage startup' },
+      { has: 'seed round' },
       { has: 'Series A' },
       { has: 'Series B' },
       { has: 'Series C' },
