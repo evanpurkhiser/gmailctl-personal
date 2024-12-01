@@ -17,6 +17,7 @@ local labels = [{ name: l } for l in [
   'Music / SF Events',
   'Newsletter / Reading',
   'Newsletter / SF',
+  'Newsletter / NYC',
   'Newsletter / Shopping',
   'Recruiters',
   'Rent Payments',
@@ -420,6 +421,19 @@ local newsletterSF = {
   },
 };
 
+local newsletterNYC = {
+  filter: {
+    or: [
+      { from: 'metmuseum.org' },
+      { from: 'moma.org' },
+    ],
+  },
+  actions: {
+    archive: true,
+    labels: ['Newsletter / NYC'],
+  },
+};
+
 // Various bank / investment statements, I don't need to see this but like to
 // keep them for record
 local statements = {
@@ -681,6 +695,7 @@ local rules = [
   newsletterReading,
   newsletterShopping,
   newsletterSF,
+  newsletterNYC,
   statements,
   receipts,
   flights,
