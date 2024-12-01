@@ -78,6 +78,7 @@ local recruiters = {
       { has: 'your availability is' },
       { has: 'reached out to you' },
       { has: 'sequoia' },
+      { has: 'open to connecting' },
     ],
   },
   actions: {
