@@ -479,6 +479,8 @@ local receipts = {
       // Digital Ocean
       { subject: 'DigitalOcean - Payment Receipt' },
       { has: 'Thanks for using DigitalOcean' },
+      // Apple
+      { subject: 'Your receipt from Apple' },
       // Any service that uses square
       { has: 'Square automatically sends receipts to the email address you used at any Square seller' },
       // Amara Financial invoices
