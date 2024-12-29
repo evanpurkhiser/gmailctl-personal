@@ -1,6 +1,7 @@
 local lib = import 'gmailctl.libsonnet';
 
 local labels = [{ name: l } for l in [
+  '+ Important',
   '+ Needs Filters',
   'Brand / COS',
   'Brand / Club Monaco',
