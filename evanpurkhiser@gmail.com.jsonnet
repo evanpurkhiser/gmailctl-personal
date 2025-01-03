@@ -366,6 +366,7 @@ local brandClubMonaco = {
 local shippedNotification = {
   filter: {
     or: [
+      { from: 'mcinfo@ups.com' },
       { has: 'has shipped' },
       { subject: 'Delivered: Your Amazon.com order' },
       { subject: 'Your Amazon.com order' },
