@@ -451,7 +451,7 @@ local statements = {
       // Schwab
       { subject: 'Your account eStatement is available' },
       { subject: 'Your account statement is available' },
-      { subject: 'Schwab eConfirms for account ending' },
+      { subject: 'Schwab eConfirms' },
       // Chase
       { subject: 'Your statement is ready for account' },
       { subject: 'Your statement is ready for credit card ending' },
