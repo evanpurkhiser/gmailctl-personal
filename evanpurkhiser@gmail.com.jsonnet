@@ -621,7 +621,19 @@ local flights = {
 };
 
 
-// USPS Informed delivery
+// Immediately delete mailbox mail that does not have an image
+local mailboxDelete = {
+  filter: {
+    and: [
+      { from: 'email.informeddelivery.usps.com' },
+      { has: 'There is one or more mailpieces for which we do not currently have an image' },
+    ],
+  },
+  actions: {
+    delete: true,
+  },
+};
+
 local mailbox = {
   filter: {
     or: [
@@ -632,7 +644,6 @@ local mailbox = {
   actions: {
     archive: true,
     labels: ['Mailbox'],
-    markRead: true,
   },
 };
 
@@ -710,6 +721,7 @@ local rules = [
   statements,
   receipts,
   flights,
+  mailboxDelete,
   mailbox,
   ccsf,
   ignored,
