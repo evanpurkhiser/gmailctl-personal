@@ -468,6 +468,8 @@ local statements = {
       { and: [{ from: 'venmo@venmo.com' }, { subject: 'Transaction History' }] },
       // Spectrum
       { subject: 'Your Spectrum Statement is Ready' },
+      // Dads ATT (He has me as a recovery email)
+      { from: 'att-mail.com' },
     ],
   },
   actions: {
