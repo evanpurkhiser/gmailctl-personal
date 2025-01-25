@@ -632,6 +632,7 @@ local mailbox = {
   actions: {
     archive: true,
     labels: ['Mailbox'],
+    markRead: true,
   },
 };
 
