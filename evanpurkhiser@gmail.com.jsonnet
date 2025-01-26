@@ -627,10 +627,8 @@ local mailboxDelete = {
     and: [
       { from: 'email.informeddelivery.usps.com' },
       { has: 'There is one or more mailpieces for which we do not currently have an image' },
-      { not: [
-        { query: 'has:attachment' }
-        { has: 'from' },
-      ] },
+      { not: { query: 'has:attachment' } },
+      { not: { has: 'from' } },
     ],
   },
   actions: {
