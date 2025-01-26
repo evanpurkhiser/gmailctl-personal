@@ -557,7 +557,10 @@ local flights = {
       ] },
       { and: [
         { from: 'flyfrontier.com' },
-        { subject: 'Reservation Confirmation' },
+        { or: [
+          { subject: 'Reservation Confirmation' },
+          { subject: 'Your Flight Confirmation' },
+        ] },
       ] },
       { and: [
         { from: 'aircanada.ca' },
