@@ -249,6 +249,14 @@ local pagerduty = {
   },
 };
 
+local desana = {
+  filter: {
+    from: 'bookings@desana.io',
+  },
+  actions: {
+    delete: true,
+  },
+};
 
 local rules = [
   airbase,
@@ -270,6 +278,7 @@ local rules = [
   weeklySLOs,
   technicalSteeringCommittees,
   pagerduty,
+  desana,
 ];
 
 {
