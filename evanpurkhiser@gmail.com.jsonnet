@@ -387,6 +387,7 @@ local newsletterReading = {
     or: [
       { from: 'setstudio@buttondown.email' },
       { from: 'info@tympanus.net' },
+      { from: 'thecollectivenewsletter@mail.beehiiv.com' },
       { from: 'hello@gilhuybrecht.com' },
       { from: 'me@arun.is' },
       { from: 'theindex@buttondown.email' },
