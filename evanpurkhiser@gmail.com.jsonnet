@@ -390,7 +390,7 @@ local newsletterReading = {
       { from: 'thecollectivenewsletter@mail.beehiiv.com' },
       { from: 'hello@gilhuybrecht.com' },
       { from: 'me@arun.is' },
-      { from: 'theindex@buttondown.email' },
+      { from: 'theindex@piccalil.li' },
       { from: 'info@email.1password.com' },
     ],
   },
