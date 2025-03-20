@@ -43,6 +43,7 @@ local recruiters = {
       { has: 'sourcer' },
       { has: 'technical sourcer' },
       { has: 'talent manager' },
+      { has: 'talent advisor' },
       { has: 'talent associate' },
       { has: 'talent scout' },
       { has: 'talent acquisition' },
