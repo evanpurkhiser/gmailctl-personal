@@ -519,6 +519,8 @@ local receipts = {
       },
       // Apartment rent
       { subject: 'Clear Sky Initiatives - Online Payment Confirmation' },
+      // LunchMoney
+      { from: 'invoice+statements@lunchmoney.app' },
     ],
   },
   actions: {
