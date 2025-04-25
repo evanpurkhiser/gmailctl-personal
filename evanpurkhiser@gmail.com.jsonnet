@@ -85,6 +85,7 @@ local recruiters = {
       { has: 'reached out to you' },
       { has: 'sequoia' },
       { has: 'intro chat' },
+      { has: 'fast-growing' },
     ],
   },
   actions: {
