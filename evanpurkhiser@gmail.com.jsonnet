@@ -53,6 +53,7 @@ local recruiters = {
       { has: 'talent director' },
       { has: 'talent team' },
       { has: 'talent & growth' },
+      { has: 'head of talent' },
       // Things not recruiters call themselves but still try to recruit
       { has: 'VP of Engineering' },
       { has: 'I’m the CTO' },
