@@ -517,7 +517,7 @@ local receipts = {
       {
         and: [
           { subject: 'Your Con Edison bill is ready' },
-          { from: 'coned-bill@emailconed.com' },
+          { from: 'billing.coned.com' },
         ],
       },
       // Apartment rent
