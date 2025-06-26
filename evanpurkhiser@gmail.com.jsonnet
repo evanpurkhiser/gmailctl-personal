@@ -694,6 +694,13 @@ local ignoredList = [
   { subject: 'Your TrueBlue statement has landed' },
   // find my iphone notificatin
   { subject: 'A sound was played on Evan’s iPhone' },
+  // Mint mobile notices
+  {
+    and: [
+      { from: 'mintmobile.com' },
+      { subject: 'Your Plan Is All Renewed' },
+    ],
+  },
 ];
 local ignored = {
   filter: { or: ignoredList },
