@@ -476,6 +476,8 @@ local statements = {
       { subject: 'Your Spectrum Statement is Ready' },
       // Dads ATT (He has me as a recovery email)
       { from: 'att-mail.com' },
+      // Cloudflare invoices
+      { subject: 'Your Cloudflare Invoice is Available' },
     ],
   },
   actions: {
