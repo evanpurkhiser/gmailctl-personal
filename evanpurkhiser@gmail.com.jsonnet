@@ -28,6 +28,7 @@ local labels = [{ name: l } for l in [
   'Shipping Notification',
   'Venmo / Cashout',
   'Venmo / Paid',
+  'Automation / Lunch Money Details',
 ]];
 
 // Attempt to filter out recruiter emails
@@ -521,7 +522,7 @@ local receipts = {
       },
       // Apartment rent
       { subject: 'Clear Sky Initiatives - Online Payment Confirmation' },
-      // LunchMoney
+      // Lunch Money
       { from: 'invoice+statements@lunchmoney.app' },
     ],
   },
@@ -682,6 +683,27 @@ local ccsf = {
   },
 };
 
+// Emails that should be automatically forwarded to my Lunch Money email detail
+// parsing service. These are typically order emails that will have some
+// associated Lunch Money transaction that will be either split or have notes
+// added to it.
+local lunchmoneyForwarding = {
+  filter: {
+    or: [
+      // Amazon order details
+      {
+        and: [
+          { from: 'amazon.com' },
+          { subject: 'Ordered:' },
+        ],
+      },
+    ],
+  },
+  actions: {
+    labels: ['Automation / Lunch Money Details'],
+  },
+};
+
 
 // Things I just straight don't care about
 local ignoredList = [
@@ -743,6 +765,7 @@ local rules = [
   mailboxDelete,
   mailbox,
   ccsf,
+  lunchmoneyForwarding,
   ignored,
 ];
 
