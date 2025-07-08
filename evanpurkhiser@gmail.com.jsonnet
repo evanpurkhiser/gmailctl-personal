@@ -28,7 +28,7 @@ local labels = [{ name: l } for l in [
   'Shipping Notification',
   'Venmo / Cashout',
   'Venmo / Paid',
-  'Automation / Lunch Money Details',
+  'Fwd / Lunch Money',
 ]];
 
 // Attempt to filter out recruiter emails
@@ -700,7 +700,7 @@ local lunchmoneyForwarding = {
     ],
   },
   actions: {
-    labels: ['Automation / Lunch Money Details'],
+    labels: ['Fwd / Lunch Money'],
   },
 };
 
