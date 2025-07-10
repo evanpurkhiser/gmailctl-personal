@@ -684,7 +684,7 @@ local ccsf = {
 };
 
 // Emails that should be automatically forwarded to my Lunch Money email detail
-// parsing service. These are typically order emails that will have some
+// parsing service. These are typically receipt emails that will have some
 // associated Lunch Money transaction that will be either split or have notes
 // added to it.
 local lunchmoneyForwarding = {
@@ -695,6 +695,13 @@ local lunchmoneyForwarding = {
         and: [
           { from: 'amazon.com' },
           { subject: 'Ordered:' },
+        ],
+      },
+      // Lyft bike rides
+      {
+        and: [
+          { from: 'lyftmail.com' },
+          { subject: 'Your Lyft Bike ride' },
         ],
       },
     ],
