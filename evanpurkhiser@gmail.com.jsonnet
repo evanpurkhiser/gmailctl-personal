@@ -89,6 +89,7 @@ local recruiters = {
       { has: 'open to a quick' },
       { has: 'intro chat' },
       { has: 'fast-growing' },
+      { has: 'in this role' },
     ],
   },
   actions: {
