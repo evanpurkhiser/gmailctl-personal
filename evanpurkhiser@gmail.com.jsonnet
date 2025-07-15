@@ -519,9 +519,8 @@ local receipts = {
         ],
       },
       // ConEdison
-      {
-        subject: 'Your Con Edison bill is ready',
-      },
+      { subject: 'Your Con Edison bill is ready' },
+      { subject: 'Your Con Edison Bill Is Due' },
       // Apartment rent
       { subject: 'Clear Sky Initiatives - Online Payment Confirmation' },
       // Lunch Money
