@@ -707,6 +707,13 @@ local lunchmoneyForwarding = {
           { subject: 'Your Lyft Bike ride' },
         ],
       },
+      // Lyft car rides
+      {
+        and: [
+          { from: 'lyftmail.com' },
+          { subject: 'Your Ride with' },
+        ],
+      },
     ],
   },
   actions: {
