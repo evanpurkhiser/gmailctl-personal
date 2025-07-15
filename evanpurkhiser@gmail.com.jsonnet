@@ -398,6 +398,7 @@ local newsletterReading = {
       { from: 'me@arun.is' },
       { from: 'theindex@piccalil.li' },
       { from: 'info@email.1password.com' },
+      { from: 'makingsoftware.co' },
     ],
   },
   actions: {
