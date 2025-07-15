@@ -688,6 +688,8 @@ local ccsf = {
 // parsing service. These are typically receipt emails that will have some
 // associated Lunch Money transaction that will be either split or have notes
 // added to it.
+//
+// See: https://github.com/evanpurkhiser/email-to-lunchmoney
 local lunchmoneyForwarding = {
   filter: {
     or: [
