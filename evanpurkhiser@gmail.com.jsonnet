@@ -627,6 +627,10 @@ local flights = {
         { from: 'trip.com' },
         { subject: 'Flight Booking Confirmed' },
       ] },
+      { and: [
+        { from: 'flyporter.com' },
+        { subject: 'Booking details:' },
+      ] },
     ],
   },
   actions: {
