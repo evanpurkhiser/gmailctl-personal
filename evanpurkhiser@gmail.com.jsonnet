@@ -721,7 +721,6 @@ local lunchmoneyForwarding = {
         ],
       },
       // Apple receipts
-      { subject: 'Your receipt from Apple.' },
       {
         and: [
           { from: 'email.apple.com' },
