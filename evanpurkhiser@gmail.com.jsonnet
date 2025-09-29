@@ -660,6 +660,7 @@ local mailbox = {
     or: [
       { from: 'email.informeddelivery.usps.com' },
       { subject: 'Package Delivery Virtual Doorman' },
+      { subject: 'Package Notification 324 East 4th Street' },
     ],
   },
   actions: {
