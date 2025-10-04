@@ -730,6 +730,13 @@ local lunchmoneyForwarding = {
           { subject: 'Your receipt from Apple.' },
         ],
       },
+      // Cloudflare invoices
+      {
+        and: [
+          { from: 'cloudflare.com' },
+          { subject: 'Your Cloudflare invoice is attached' },
+        ],
+      },
     ],
   },
   actions: {
