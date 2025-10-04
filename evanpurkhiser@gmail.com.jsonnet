@@ -482,6 +482,7 @@ local statements = {
       { from: 'att-mail.com' },
       // Cloudflare invoices
       { subject: 'Your Cloudflare Invoice is Available' },
+      { subject: 'Your Cloudflare invoice is attached' },
       // Paypal
       { and: [{ from: 'paypal.com' }, { subject: 'account statement is available.' }] },
     ],
