@@ -231,7 +231,10 @@ local weeklySLOs = {
 
 local technicalSteeringCommittees = {
   filter: {
-    subject: 'TSC notes',
+    or: [
+      { subject: 'TSC notes' },
+      { subject: 'Backend TSC' },
+    ],
   },
   actions: {
     archive: true,
