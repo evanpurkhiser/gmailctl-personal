@@ -21,6 +21,7 @@ local labels = [{ name: l } for l in [
   'Newsletter / NYC',
   'Newsletter / Shopping',
   'Recruiters',
+  'Reservations',
   'Rent Payments',
   'Rideshare / Lyft',
   'Rideshare / Uber',
@@ -640,6 +641,29 @@ local flights = {
   },
 };
 
+// Restaurant reservation confirmations
+local reservations = {
+  filter: {
+    or: [
+      { from: 'reserve-noreply@google.com' },
+      {
+        and: [
+          { from: 'noreply@resy.com' },
+          { subject: 'Your reservation at' },
+        ],
+      },
+      {
+        and: [
+          { from: 'opentable.com' },
+          { subject: 'Your reservation confirmation' },
+        ],
+      },
+    ],
+  },
+  actions: {
+    labels: ['Reservations'],
+  },
+};
 
 // Immediately delete mailbox mail that does not have an image
 local mailboxDelete = {
@@ -802,6 +826,7 @@ local rules = [
   statements,
   receipts,
   flights,
+  reservations,
   mailboxDelete,
   mailbox,
   ccsf,
