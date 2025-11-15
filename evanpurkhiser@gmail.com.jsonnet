@@ -774,6 +774,15 @@ local lunchmoneyForwarding = {
   },
 };
 
+// Archive generic "new login" notification emails
+local newLogin = {
+  filter: {
+    has: 'new login',
+  },
+  actions: {
+    archive: true,
+  },
+};
 
 // Things I just straight don't care about
 local ignoredList = [
@@ -837,6 +846,7 @@ local rules = [
   mailbox,
   ccsf,
   lunchmoneyForwarding,
+  newLogin,
   ignored,
 ];
 
