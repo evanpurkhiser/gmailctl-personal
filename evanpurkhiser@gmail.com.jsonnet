@@ -658,6 +658,12 @@ local reservations = {
           { subject: 'Your reservation confirmation' },
         ],
       },
+      {
+        and: [
+          { from: 'sevenrooms.com' },
+          { subject: 'Your Reservation at' },
+        ],
+      },
     ],
   },
   actions: {
