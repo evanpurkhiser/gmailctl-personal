@@ -27,6 +27,7 @@ local labels = [{ name: l } for l in [
   'Rideshare / Uber',
   'Sentry Options',
   'Shipping Notification',
+  'Therapist',
   'Venmo / Cashout',
   'Venmo / Paid',
   'Fwd / Lunch Money',
@@ -243,6 +244,29 @@ local schwabProxy = {
   actions: {
     archive: true,
     markRead: true,
+  },
+};
+
+// SimplePractice appointment reminders
+local therapyNotifications = {
+  filter: {
+    and: [
+      { from: 'simplepractice.com' },
+      { subject: 'Appointment reminder for' },
+    ],
+  },
+  actions: {
+    archive: true,
+  },
+};
+
+// Emails from therapist
+local therapistEmails = {
+  filter: {
+    from: 'connor@moderntherapygroup.com',
+  },
+  actions: {
+    labels: ['Therapist'],
   },
 };
 
@@ -823,6 +847,8 @@ local rules = [
   venmoCashout,
   rentPayments,
   schwabProxy,
+  therapyNotifications,
+  therapistEmails,
   sentryOptionGrants,
   musicBandcamp,
   musicPromos,
