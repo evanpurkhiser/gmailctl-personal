@@ -660,6 +660,10 @@ local flights = {
         { from: 'flyporter.com' },
         { subject: 'Booking details:' },
       ] },
+      { and: [
+        { from: 'lionairthai.com' },
+        { subject: 'Thai Lion Air Reservation' },
+      ] },
     ],
   },
   actions: {
