@@ -76,6 +76,7 @@ local githubNotifications = {
     list: 'getsentry.github.com',
   },
   actions: {
+    archive: true,
     labels: ['GitHub'],
   },
 };
