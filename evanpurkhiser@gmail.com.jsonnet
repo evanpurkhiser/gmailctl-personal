@@ -797,6 +797,13 @@ local lunchmoneyForwarding = {
           { subject: 'Your Cloudflare invoice is attached' },
         ],
       },
+      // Booking.com receipts
+      {
+        and: [
+          { from: 'booking.com' },
+          { subject: 'This is your receipt' },
+        ],
+      },
     ],
   },
   actions: {
