@@ -564,37 +564,57 @@ local receipts = {
   },
 };
 
+// Airline receipt filters for airlines with email-to-lunchmoney processors
+// These are used for both Flight Confirmations label and Fwd / Lunch Money forwarding
+local airlineReceiptFilters = [
+  // Alaska Airlines
+  { and: [
+    { from: 'alaskaair.com' },
+    { subject: 'your confirmation receipt' },
+  ] },
+  // United Airlines
+  { and: [
+    { from: 'united.com' },
+    { subject: 'eTicket Itinerary and Receipt for Confirmation' },
+  ] },
+  // Delta Air Lines
+  { and: [
+    { from: 'delta.com' },
+    { subject: 'your flight receipt - EVAN PURKHISER' },
+  ] },
+  // American Airlines
+  { and: [
+    { from: 'aa.com' },
+    { or: [
+      { subject: 'Your trip confirmation' }
+      { subject: 'E-Ticket Confirmation' },
+    ] },
+  ] },
+  // Southwest Airlines
+  { and: [
+    { from: 'southwest.com' },
+    { or: [
+      { subject: "You're going to" },
+      { subject: 'Flight reservation' },
+    ] },
+  ] },
+];
+
 // Flight confirmation emails
 local flights = {
   filter: {
-    or: [
-      { and: [
-        { from: 'alaskaair.com' },
-        { subject: 'your confirmation receipt' },
-      ] },
-      { and: [
-        { from: 'united.com' },
-        { subject: 'eTicket Itinerary and Receipt for Confirmation' },
-      ] },
-      { and: [
-        { from: 'delta.com' },
-        { subject: 'your flight receipt - EVAN PURKHISER' },
-      ] },
-      { and: [
-        { from: 'aa.com' },
-        { or: [
-          { subject: 'Your trip confirmation' }
-          { subject: 'E-Ticket Confirmation' },
-        ] },
-      ] },
+    or: airlineReceiptFilters + [
+      // Spirit Airlines
       { and: [
         { from: 'spirit-airlines.com' },
         { subject: 'Spirit Airlines Flight Confirmation' },
       ] },
+      // JetBlue
       { and: [
         { from: 'jetblue.com' },
         { subject: 'JetBlue booking confirmation' },
       ] },
+      // Frontier Airlines
       { and: [
         { from: 'flyfrontier.com' },
         { or: [
@@ -602,26 +622,23 @@ local flights = {
           { subject: 'Your Flight Confirmation' },
         ] },
       ] },
+      // Air Canada
       { and: [
         { from: 'aircanada.ca' },
         { subject: 'Booking Reference' },
         { has: 'Booking Confirmation' },
       ] },
+      // EasyJet
       { and: [
         { from: 'easyjet.com' },
         { subject: 'easyJet booking reference' },
       ] },
+      // Virgin America
       { and: [
         { from: 'virginamerica.com' },
         { subject: 'Virgin America Reservation' },
       ] },
-      { and: [
-        { from: 'southwest.com' },
-        { or: [
-          { subject: "You're going to" },
-          { subject: 'Flight reservation' },
-        ] },
-      ] },
+      // Austrian Airlines
       { and: [
         { from: 'austrian.com' },
         { subject: 'Your booking to' },
@@ -761,7 +778,7 @@ local ccsf = {
 // See: https://github.com/evanpurkhiser/email-to-lunchmoney
 local lunchmoneyForwarding = {
   filter: {
-    or: [
+    or: airlineReceiptFilters + [
       // Amazon order details
       {
         and: [
