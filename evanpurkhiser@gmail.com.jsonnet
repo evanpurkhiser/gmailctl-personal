@@ -593,10 +593,7 @@ local airlineReceiptFilters = [
   // Southwest Airlines
   { and: [
     { from: 'southwest.com' },
-    { or: [
-      { subject: "You're going to" },
-      { subject: 'Flight reservation' },
-    ] },
+    { subject: "You're going to" },
   ] },
 ];
 
