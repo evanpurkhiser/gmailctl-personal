@@ -818,6 +818,14 @@ local lunchmoneyForwarding = {
           { subject: 'This is your receipt' },
         ],
       },
+      // Uber ride receipts (excluding charge summaries)
+      {
+        and: [
+          { from: 'noreply@uber.com' },
+          { subject: 'trip with uber' },
+          { not: { has: 'this is not a payment receipt' } },
+        ],
+      },
     ],
   },
   actions: {
