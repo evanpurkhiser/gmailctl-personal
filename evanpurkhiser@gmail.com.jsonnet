@@ -80,6 +80,8 @@ local recruiters = {
       { has: 'product-market fit' },
       { has: 'vc-funded' },
       { has: 'vc-backed' },
+      { has: 'venture backed' },
+      { has: 'venture-backed' },
       { has: 'I lead recruiting' },
       { has: 'you would be a great fit' },
       { has: 'your availability is' },
@@ -811,11 +813,16 @@ local lunchmoneyForwarding = {
           { subject: 'Your Cloudflare invoice is attached' },
         ],
       },
-      // Booking.com receipts
+      // Booking.com receipts and confirmations
       {
         and: [
           { from: 'booking.com' },
-          { subject: 'This is your receipt' },
+          {
+            or: [
+              { subject: 'This is your receipt' },
+              { subject: 'Your booking is confirmed at' },
+            ],
+          },
         ],
       },
       // Uber ride receipts (excluding charge summaries)
