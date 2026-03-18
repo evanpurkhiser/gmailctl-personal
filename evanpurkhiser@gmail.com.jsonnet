@@ -83,6 +83,7 @@ local recruiters = {
       { has: 'venture backed' },
       { has: 'venture-backed' },
       { has: 'I lead recruiting' },
+      { has: "I'm hiring" },
       { has: 'you would be a great fit' },
       { has: 'your availability is' },
       { has: 'your next move' },
