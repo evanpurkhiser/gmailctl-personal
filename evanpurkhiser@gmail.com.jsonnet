@@ -22,6 +22,7 @@ local labels = [{ name: l } for l in [
   'Newsletter / Shopping',
   'Recruiters',
   'Reservations',
+  'Reservations / Travel',
   'Rent Payments',
   'Rideshare / Lyft',
   'Rideshare / Uber',
@@ -559,6 +560,13 @@ local receipts = {
       { subject: 'Clear Sky Initiatives - Online Payment Confirmation' },
       // Lunch Money
       { from: 'invoice+statements@lunchmoney.app' },
+      // Booking.com receipt emails
+      {
+        and: [
+          { from: 'noreply-payments@booking.com' },
+          { subject: 'This is your receipt' },
+        ],
+      },
     ],
   },
   actions: {
@@ -715,6 +723,23 @@ local reservations = {
   },
   actions: {
     labels: ['Reservations'],
+  },
+};
+
+// Travel reservation confirmations
+local travelReservations = {
+  filter: {
+    and: [
+      { from: 'booking.com' },
+      {
+        or: [
+          { subject: 'Thanks! Your booking is confirmed' },
+        ],
+      },
+    ],
+  },
+  actions: {
+    labels: ['Reservations / Travel'],
   },
 };
 
@@ -911,6 +936,7 @@ local rules = [
   receipts,
   flights,
   reservations,
+  travelReservations,
   mailboxDelete,
   mailbox,
   ccsf,
