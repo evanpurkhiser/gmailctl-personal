@@ -113,6 +113,7 @@ local meetRecordings = {
       { from: 'meet-transcriptions-noreply@google.com' },
       { from: 'meet-recordings-noreply@google.com' },
       { from: 'meetings-noreply@google.com' },
+      { from: 'gemini-notes@google.com' },
     ],
   },
   actions: {
