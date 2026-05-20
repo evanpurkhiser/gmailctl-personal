@@ -10,7 +10,6 @@ local labels = [{ name: l } for l in [
   'CCSF',
   'Discounts',
   'Mailbox',
-  'Flight Confirmations',
   'Money / Receipts',
   'Money / Statements',
   'Music / Bandcamp',
@@ -21,8 +20,10 @@ local labels = [{ name: l } for l in [
   'Newsletter / NYC',
   'Newsletter / Shopping',
   'Recruiters',
-  'Reservations',
-  'Reservations / Travel',
+  'Resos / Flights',
+  'Resos / Hotels',
+  'Resos / Restaurants',
+  'Resos / Events',
   'Rent Payments',
   'Rideshare / Lyft',
   'Rideshare / Uber',
@@ -576,7 +577,7 @@ local receipts = {
 };
 
 // Airline receipt filters for airlines with email-to-lunchmoney processors
-// These are used for both Flight Confirmations label and Fwd / Lunch Money forwarding
+// These are used for both Resos / Flights label and Fwd / Lunch Money forwarding
 local airlineReceiptFilters = [
   // Alaska Airlines
   { and: [
@@ -692,7 +693,7 @@ local flights = {
     ],
   },
   actions: {
-    labels: ['Flight Confirmations'],
+    labels: ['Resos / Flights'],
   },
 };
 
@@ -722,12 +723,12 @@ local reservations = {
     ],
   },
   actions: {
-    labels: ['Reservations'],
+    labels: ['Resos / Restaurants'],
   },
 };
 
-// Travel reservation confirmations
-local travelReservations = {
+// Hotel reservation confirmations
+local hotelReservations = {
   filter: {
     and: [
       { from: 'booking.com' },
@@ -739,7 +740,7 @@ local travelReservations = {
     ],
   },
   actions: {
-    labels: ['Reservations / Travel'],
+    labels: ['Resos / Hotels'],
   },
 };
 
@@ -936,7 +937,7 @@ local rules = [
   receipts,
   flights,
   reservations,
-  travelReservations,
+  hotelReservations,
   mailboxDelete,
   mailbox,
   ccsf,
