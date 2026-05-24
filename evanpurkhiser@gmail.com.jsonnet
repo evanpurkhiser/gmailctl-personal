@@ -12,6 +12,7 @@ local labels = [{ name: l } for l in [
   'Mailbox',
   'Money / Receipts',
   'Money / Statements',
+  'Money / Venture X',
   'Music / Bandcamp',
   'Music / Promos',
   'Music / SF Events',
@@ -479,6 +480,21 @@ local newsletterNYC = {
   },
 };
 
+// Venture X transaction alerts
+local ventureXTransactions = {
+  filter: {
+    and: [
+      { from: 'capitalone@notification.capitalone.com' },
+      { subject: 'A new transaction was charged to your account' },
+    ],
+  },
+  actions: {
+    archive: true,
+    markRead: true,
+    labels: ['Money / Venture X'],
+  },
+};
+
 // Various bank / investment statements, I don't need to see this but like to
 // keep them for record
 local statements = {
@@ -933,6 +949,7 @@ local rules = [
   newsletterShopping,
   newsletterSF,
   newsletterNYC,
+  ventureXTransactions,
   statements,
   receipts,
   flights,
