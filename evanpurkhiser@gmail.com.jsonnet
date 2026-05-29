@@ -625,6 +625,13 @@ local airlineReceiptFilters = [
   ] },
 ];
 
+local capitalOneTravelFlightFilter = {
+  and: [
+    { from: 'capitalone@capitalonebooking.com' },
+    { subject: 'View your flight details for your' },
+  ],
+};
+
 // Flight confirmation emails
 local flights = {
   filter: {
@@ -681,6 +688,7 @@ local flights = {
         { has: 'Flight' },
         { not: { has: 'Hotel Reservation' } },
       ] },
+      capitalOneTravelFlightFilter,
       { and: [
         { from: 'EVA AIRWAYS' },
         { subject: 'EVA AIR ELECTRONIC TICKET-EMD RECEIPT' },
@@ -876,6 +884,7 @@ local lunchmoneyForwarding = {
           { not: { has: 'this is not a payment receipt' } },
         ],
       },
+      capitalOneTravelFlightFilter,
     ],
   },
   actions: {
