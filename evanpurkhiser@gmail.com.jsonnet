@@ -485,7 +485,12 @@ local ventureXTransactions = {
   filter: {
     and: [
       { from: 'capitalone@notification.capitalone.com' },
-      { subject: 'A new transaction was charged to your account' },
+      {
+        or: [
+          { subject: 'A new transaction was charged to your account' },
+          { subject: 'You have a credit from' },
+        ],
+      },
     ],
   },
   actions: {
