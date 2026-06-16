@@ -590,6 +590,13 @@ local receipts = {
           { subject: 'This is your receipt' },
         ],
       },
+      // Blackbird restaurant receipts
+      {
+        and: [
+          { from: 'restaurants@blackbird.xyz' },
+          { subject: 'Your receipt from' },
+        ],
+      },
     ],
   },
   actions: {
