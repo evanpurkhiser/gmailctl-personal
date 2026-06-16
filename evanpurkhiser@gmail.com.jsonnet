@@ -517,6 +517,7 @@ local statements = {
       { subject: 'Your statement is ready for credit card ending' },
       { subject: 'Your credit card statement is available' },
       { subject: 'Your latest statement is now available' },
+      { subject: 'Your Chase Freedom Unlimited Visa automatic payment is scheduled' },
       { subject: 'Your Chase Sapphire Reserve Visa automatic payment is scheduled' },
       // United Healthcare
       { subject: "Here's your new Health Statement from UnitedHealthcare" },
