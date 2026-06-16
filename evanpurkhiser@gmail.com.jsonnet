@@ -522,7 +522,7 @@ local statements = {
       // United Healthcare
       { subject: "Here's your new Health Statement from UnitedHealthcare" },
       // Cigna
-      { and: [{ from: 'donotreply@document.cigna.com' }, { subject: 'Evan, we processed your claim' }] },
+      { and: [{ from: 'document.cigna.com' }, { subject: 'Evan, we processed your claim' }] },
       // Human interest
       { from: 'support@humaninterest.com' },
       // Google
