@@ -519,6 +519,8 @@ local statements = {
       { subject: 'Your latest statement is now available' },
       { subject: 'Your Chase Freedom Unlimited Visa automatic payment is scheduled' },
       { subject: 'Your Chase Sapphire Reserve Visa automatic payment is scheduled' },
+      // Capital One
+      { and: [{ from: 'capitalone@notification.capitalone.com' }, { subject: 'Your Venture X Card statement is ready' }] },
       // United Healthcare
       { subject: "Here's your new Health Statement from UnitedHealthcare" },
       // Cigna
