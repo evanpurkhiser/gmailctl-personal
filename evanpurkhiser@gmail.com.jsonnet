@@ -22,6 +22,7 @@ local labels = [{ name: l } for l in [
   'Newsletter / Shopping',
   'Recruiters',
   'Resos / Flights',
+  'Resos / Car Rentals',
   'Resos / Hotels',
   'Resos / Restaurants',
   'Resos / Events',
@@ -766,6 +767,19 @@ local reservations = {
   },
 };
 
+// Car rental reservation confirmations
+local carRentalReservations = {
+  filter: {
+    and: [
+      { from: 'hertz.com' },
+      { subject: 'thanks for booking' },
+    ],
+  },
+  actions: {
+    labels: ['Resos / Car Rentals'],
+  },
+};
+
 // Hotel reservation confirmations
 local hotelReservations = {
   filter: {
@@ -978,6 +992,7 @@ local rules = [
   receipts,
   flights,
   reservations,
+  carRentalReservations,
   hotelReservations,
   mailboxDelete,
   mailbox,
