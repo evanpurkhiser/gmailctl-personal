@@ -660,7 +660,10 @@ local flights = {
       // JetBlue
       { and: [
         { from: 'jetblue.com' },
-        { subject: 'JetBlue booking confirmation' },
+        { or: [
+          { subject: 'JetBlue booking confirmation' },
+          { subject: 'Your JetBlue itinerary' },
+        ] },
       ] },
       // Frontier Airlines
       { and: [
