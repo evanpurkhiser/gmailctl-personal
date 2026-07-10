@@ -754,7 +754,10 @@ local reservations = {
       {
         and: [
           { from: 'opentable.com' },
-          { subject: 'Your reservation confirmation' },
+          { or: [
+            { subject: 'Your reservation confirmation' },
+            { subject: 'know you are coming' },
+          ] },
         ],
       },
       {
