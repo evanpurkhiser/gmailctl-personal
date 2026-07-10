@@ -934,6 +934,18 @@ local newLogin = {
   },
 };
 
+local viporterStatement = {
+  filter: {
+    and: [
+      { from: 'communications.flyporter.com' },
+      { subject: 'Your Quarterly VIPorter Statement is here' },
+    ],
+  },
+  actions: {
+    archive: true,
+  },
+};
+
 // Things I just straight don't care about
 local ignoredList = [
   // Google cloud subprocess update emails
@@ -1002,6 +1014,7 @@ local rules = [
   ccsf,
   lunchmoneyForwarding,
   newLogin,
+  viporterStatement,
   ignored,
 ];
 
