@@ -16,8 +16,8 @@ jobs:
       emails: ${{ steps.emails.outputs.list }}
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: dorny/paths-filter@v2
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
         id: filter
         with:
           list-files: json
@@ -29,7 +29,7 @@ jobs:
         id: emails
         run: |
           list="$(echo '${{ steps.filter.outputs.emails_files }}' | jq -rc 'map(sub(".jsonnet$"; ""))')"
-          echo "list=${list}" >> $GITHUB_OUTPUT
+          echo "list=${list}" >> "$GITHUB_OUTPUT"
 
   apply:
     name: apply for ${{ matrix.email }}
@@ -47,13 +47,8 @@ jobs:
     environment: ${{ matrix.email }}
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-go@v3
-        with:
-          go-version: ">=1.20.0"
-
-      - name: Install gmailctl
-        run: go install github.com/mbrt/gmailctl/cmd/gmailctl@latest
+      - uses: actions/checkout@v4
+      - uses: jdx/mise-action@v4
 
       - name: Install credentials
         run: |
@@ -72,7 +67,7 @@ jobs:
           gmailctl diff -f ${{ matrix.email }}.jsonnet 2>&1 | tee filters.diff
 
       - name: Read diff output into variable
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         id: diff
         with:
           script: |

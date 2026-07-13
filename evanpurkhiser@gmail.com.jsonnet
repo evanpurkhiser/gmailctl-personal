@@ -957,7 +957,7 @@ local ignoredList = [
   },
   // Trublue point emails
   { subject: 'Your TrueBlue statement has landed' },
-  // find my iphone notificatin
+  // find my iphone notification
   { subject: 'A sound was played on Evan’s iPhone' },
   // Mint mobile notices
   {
