@@ -16,8 +16,10 @@ jobs:
       emails: ${{ steps.emails.outputs.list }}
 
     steps:
-      - uses: actions/checkout@v6
-      - uses: dorny/paths-filter@v3
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+      - uses: dorny/paths-filter@d1c1ffe0248fe513906c8e24db8ea791d46f8590 # v3.0.3
         id: filter
         with:
           list-files: json
@@ -28,8 +30,10 @@ jobs:
       - name: Normalize emails
         id: emails
         run: |
-          list="$(echo '${{ steps.filter.outputs.emails_files }}' | jq -rc 'map(sub(".jsonnet$"; ""))')"
+          list="$(echo "${STEPS_FILTER_OUTPUTS_EMAILS_FILES}" | jq -rc 'map(sub(".jsonnet$"; ""))')"
           echo "list=${list}" >> "$GITHUB_OUTPUT"
+        env:
+          STEPS_FILTER_OUTPUTS_EMAILS_FILES: ${{ steps.filter.outputs.emails_files }}
 
   apply:
     name: apply for ${{ matrix.email }}
@@ -47,8 +51,10 @@ jobs:
     environment: ${{ matrix.email }}
 
     steps:
-      - uses: actions/checkout@v6
-      - uses: jdx/mise-action@v4
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+      - uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4.2.0
 
       - name: Install credentials
         run: |
@@ -64,10 +70,12 @@ jobs:
 
       - name: Produce filter diff
         run: |
-          gmailctl diff -f ${{ matrix.email }}.jsonnet 2>&1 | tee filters.diff
+          gmailctl diff -f "${MATRIX_EMAIL}.jsonnet" 2>&1 | tee filters.diff
+        env:
+          MATRIX_EMAIL: ${{ matrix.email }}
 
       - name: Read diff output into variable
-        uses: actions/github-script@v8
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
         id: diff
         with:
           script: |
@@ -76,7 +84,7 @@ jobs:
           result-encoding: string
 
       - name: Create commit comment
-        uses: peter-evans/commit-comment@v2
+        uses: peter-evans/commit-comment@76d2ae14b83cd171cd38507097b9616bb9ca7cb6 # v2.0.1
         with:
           token: ${{ secrets.github_token }}
           body: |
@@ -87,4 +95,6 @@ jobs:
             ```
 
       - name: Apply changes
-        run: gmailctl apply --yes --remove-labels -f ${{ matrix.email }}.jsonnet
+        run: gmailctl apply --yes --remove-labels -f "${MATRIX_EMAIL}.jsonnet"
+        env:
+          MATRIX_EMAIL: ${{ matrix.email }}
