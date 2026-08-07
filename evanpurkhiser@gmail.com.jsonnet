@@ -523,6 +523,7 @@ local statements = {
       // Capital One
       { and: [{ from: 'capitalone@notification.capitalone.com' }, { subject: 'Your Venture X Card statement is ready' }] },
       { and: [{ from: 'capitalone@notification.capitalone.com' }, { subject: 'Your AutoPay payment is scheduled for' }] },
+      { and: [{ from: 'capitalone@notification.capitalone.com' }, { subject: "We've received your payment" }] },
       // United Healthcare
       { subject: "Here's your new Health Statement from UnitedHealthcare" },
       // Cigna
