@@ -200,6 +200,7 @@ local venmoPaid = {
         or: [
           { subject: 'You paid' },
           { subject: 'You completed' },
+          { subject: 'to your Venmo account' },
         ],
       },
     ],
