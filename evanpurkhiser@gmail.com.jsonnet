@@ -896,7 +896,19 @@ local lunchmoneyForwarding = {
       {
         and: [
           { from: 'cloudflare.com' },
-          { subject: 'Your Cloudflare invoice is attached' },
+          {
+            or: [
+              { subject: 'Your Cloudflare invoice is attached' },
+              { subject: 'Your invoice is attached' },
+            ],
+          },
+        ],
+      },
+      // Steam purchases
+      {
+        and: [
+          { from: 'steampowered.com' },
+          { subject: 'Thank you for your Steam purchase!' },
         ],
       },
       // Booking.com receipts and confirmations
